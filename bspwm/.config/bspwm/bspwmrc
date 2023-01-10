@@ -1,0 +1,87 @@
+#! /bin/sh
+
+bspc rule -r "*"
+
+polybar=$(pgrep -x polybar > /dev/null && echo "Process found" || echo "Process not found")
+if [[ $polybar == "Process not found" ]]; then
+	# ~/.config/bspwm/src/start-polybar.sh &
+  $HOME/.config/polybar/launch.sh &
+fi
+
+screenlayout="right"
+
+if [[ $(xrandr -q | grep 'HDMI' | grep -oP 'HDMI-A-0 \K\w+') == "connected" ]]; then
+  killall btops
+  if [[ $screenlayout == 'left' ]]; then
+    $HOME/.screenlayout/leftScreen.sh
+    bspc monitor eDP -d 2 3 4 5 6 7 8 9 10
+    bspc monitor HDMI-A-0 -d 1
+  else
+    $HOME/.screenlayout/rightScreen.sh
+    bspc monitor eDP -d 1 2 3 4 5 6 7 8
+    bspc monitor HDMI-A-0 -d 9 10
+    # bspc monitor eDP -d 1
+    # bspc monitor HDMI-A-0 -d 2 3 4 5 6 7 8 9 10
+  fi
+else
+  killall btops
+  btops &
+fi
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+pgrep -x picom > /dev/null || picom --experimental-backends &
+
+bspc config border_width         1
+bspc config window_gap           10
+
+bspc config split_ratio           0.5
+bspc config borderless_monocle    true
+bspc config gapless_monocle       true 
+bspc config focus_follows_pointer true
+bspc config top_padding 38
+bspc config left_padding 10
+bspc config right_padding 10
+bspc config bottom_padding 10
+
+# border color
+bspc config normal_border_color "#3b3f4c"
+bspc config active_border_color "#dddddd"
+
+bspc config focused_border_color '#FFFFFF'
+
+bspc config presel_feedback_color "#6272a4"
+
+# movie and resize window with mouse
+bspc config pointer_modifier mod4
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
+bspc config pointer_motion_interval 0
+# bspc config pointer_action2 resize_corner
+bspc config honor_size_hints true
+# bspc config ignore_ewh_struts polybar
+
+bspc config remove_disabled_monitors true
+bspc config remove_unplugged_monitors true
+bspc config merge_overlapping_monitors true
+
+########################################################
+############       BSPC RULE       #####################
+########################################################
+bspc rule -a mplayer2 state=floating
+bspc rule -a Screenkey manage=off
+bspc rule -a kitty state=tiled
+
+# always floating gui for python
+bspc rule -a Conky-manager state=floating
+bspc rule -a Tk state=floating
+bspc rule -a com-sun-tools-javac-launcher-Main state=floating
+bspc rule -a flameshot state=floating
+bspc rule -a Messenger\ call\ -\ Brave rectangle=450x800+1400+50 state=floating
+bspc rule -a Gpick state=floating
+
+bspc rule -a Ulauncher border=off state=floating
+
+# bspc rule -a \* rectangle 800x600+0+0 center=true
+
+# fix X cursor to default
+xsetroot -cursor_name left_ptr &

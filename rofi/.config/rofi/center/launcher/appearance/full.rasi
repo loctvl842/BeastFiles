@@ -1,0 +1,88 @@
+@import "../../../themes/theme.rasi"
+
+window {
+  background-color: transparent;
+	border: 0;
+	width: 100%;
+	height: 100%;
+}
+
+entry {
+	font: "Hack Nerd Font 17";
+  expand: true;
+  horizontal-align: 0.5;
+  /* placeholder: "=========> Search hộ <========="; */
+  padding: 0.20% 1% 0% 0%;
+  blink: true;
+}
+
+inputbar {
+	children: [ prompt, entry ];
+  width: 50%;
+  border: 2;
+	border-color: @title;
+  margin: 0% 25% 0% 25%;
+  padding: 1.5%;
+}
+
+listview {
+  columns:                        8;
+  lines:                          4;
+  spacing:                        10;
+  cycle:                          false;
+  dynamic:                        true;
+  layout:                         vertical;
+	scrollbar: false;
+}
+
+textbox-prompt-colon {
+	text-color:	@title;
+	font: "Fira Code 28";
+	str: "  𝓣 𝓥 𝓛   ";
+	padding: 0 0 90 0;
+  border: 0;
+}
+
+mainbox {
+  width: 100%;
+  height: 100%;
+  background-color: @background-opacity;
+  border: 0% 0% 0% 0%;
+  border-radius: 0% 0% 0% 0%;
+  border-color: @accent;
+  children: [ inputbar, listview ];
+  spacing: 5%;
+  padding: 3.5% 12.5% 0% 12.5%;
+}
+
+element {
+  background-color:               transparent;
+  text-color:                     @foreground;
+  orientation:                    vertical;
+  border-radius:                  0%;
+  padding:                        2.5% 0% 2.5% 0%;
+}
+
+element-icon {
+  background-color: transparent;
+  text-color: inherit;
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+  size: 80px;
+  border: 0px;
+}
+
+element-text {
+  background-color: transparent;
+  text-color: inherit;
+  expand: true;
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+  margin: 0.5% 0.5% -0.5% 0.5%;
+	font: "Fira Code 12";
+}
+
+element selected {
+  text-color: @title;
+  border-radius: 20px;
+}

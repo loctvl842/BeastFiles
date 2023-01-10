@@ -1,0 +1,50 @@
+@import "../../../themes/theme.rasi"
+
+configuration {
+  show-icons: false;
+  /* keys have to be unbound before they can be reused */
+  kb-accept-entry: "Return,KP_Enter";
+  kb-remove-to-eol: "";
+  kb-remove-char-back: "BackSpace,Shift+BackSpace";
+  kb-mode-complete: "";
+  /* better vim controls */
+  kb-row-down: "l,Ctrl+j,Alt+j,Down";
+  kb-row-up: "h,Ctrl+k,Alt+k,Up";
+	click-to-exit: false;
+}
+
+window {
+	width: 431;
+	location: center;
+}
+
+mainbox {
+  children: [ textbox-prompt-colon, listview ];
+  background-color: @background;
+}
+
+textbox-prompt-colon {
+	font: "Fira Code Medium 12";
+	str: "Are you sure you want to shut down your computer now?";
+  padding: 2% 1% 2% 1%;
+}
+
+
+listview {
+  dynamic: true;
+  layout: horizontal;
+}
+
+element {
+  background-color: transparent;
+  text-color: @foreground;
+  orientation: horizontal;
+	vertical-align: 0.5;
+	width: 214;
+}
+
+element-text {
+	font: "Fira Code bold 12";
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+}

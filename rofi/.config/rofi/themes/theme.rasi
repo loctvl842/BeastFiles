@@ -1,0 +1,137 @@
+@import "./mac-color.rasi"
+
+configuration {
+	font: "Fira Code 15";
+
+	/* show application icon */
+  show-icons: true;
+	icon-theme: "Fira Code 80";
+
+	/* For retrieving the most used app */
+  disable-history: true;
+
+	/* Don't show anything at first */
+  display-drun: "";
+	
+	/* Better navigation */
+  /* keys have to be unbound before they can be reused */
+  kb-accept-entry: "Ctrl+m,Return,KP_Enter";
+  kb-remove-to-eol: "";
+  kb-remove-char-back: "BackSpace,Shift+BackSpace";
+  kb-mode-complete: "";
+  /* better vim controls */
+  /* kb-mode-previous: "H,Ctrl+h,Alt+h"; */
+  kb-row-down: "J,Ctrl+j,Alt+j,Down";
+  kb-row-up: "K,Ctrl+k,Alt+k,Up";
+  kb-row-left: "Ctrl+h";
+  kb-row-right: "Ctrl+l";
+  /* kb-mode-next: "L,Ctrl+l,Alt+l"; */
+
+	hover-select: true;
+  /* Disable MousePrimary as an entry selector */
+  me-select-entry: ""; 																								/* Without this setting you won't be able to set MousePrimary as an entry acceptor. */
+  me-accept-entry: [ MousePrimary, MouseSecondary, MouseDPrimary ]; 	/* Use either LMB single click or RMB single click or LMB double click to accept an entry */
+
+	/* focus the first line on input */
+	inputchange {
+			action: "kb-row-first";
+	}
+	click-to-exit: false;
+}
+
+scrollbar {
+	width:        4px ;
+	border:       1;
+	border-color: @ele-selected;
+	handle-color: @ele-selected;
+	handle-width: 8px ;
+	padding:      0;
+	background-color: @background;
+}
+
+window {
+  background-color: @background;
+	border: 1;
+	/* border-color: @win-border; */
+	border-color: @win-border;
+	border-radius: 10;
+	pading: 0;
+}
+
+listview {
+  spacing: 0;
+  scrollbar: true;
+	padding: 0;
+	cycle: false;
+}
+
+prompt {
+	font: "Hack Nerd Font 12";
+  padding: 6 10 6 15;
+  background-color: transparent;
+	text-color: @title;
+}
+
+entry {
+	font: "Hack Nerd Font 12";
+  color: @foreground;
+  padding: 6 10 6 0;
+  background-color: transparent;
+}
+
+inputbar {
+	border-radius: 5;
+  margin: 10;
+  background-color: @inputbar-bg;
+  border-color: @inputbar-border;
+  border: 1;
+  children: [ prompt, entry ];
+}
+
+textbox-prompt-colon {
+  expand: false;
+  border: 0 0 1 0;
+  border-color: @inputbar-border;
+  enabled: true;
+	color:	@title;
+	font: "Fira Code Bold 16";
+  background-color: transparent;
+	horizontal-align: 0.5;
+	vertical-align: 0.5;
+	padding: 12px;
+}
+
+listview {
+	cycle: false;
+	background-color: transparent;
+}
+
+mainbox {
+  children: [inputbar, listview];
+  border:  0;
+	background-color: transparent;
+}
+
+
+element {
+  padding: 14 0 14 0;
+  border: 2;
+	border-radius: 0;
+	background-color: transparent;
+	margin: 0;
+  orientation: horizontal;
+}
+
+element-text {
+	background-color: transparent;
+	text-color: @foreground;
+}
+
+element-icon {
+	background-color: transparent;
+}
+
+element.selected {
+   background-color: @ele-selected;
+	 border-radius: 5;
+}

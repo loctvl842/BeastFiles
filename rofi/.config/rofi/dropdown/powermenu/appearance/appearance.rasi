@@ -1,0 +1,28 @@
+@import "../../../themes/theme.rasi"
+
+configuration {
+	font: "Hack Nerd Font 12";
+  drun-display-format: "{icon} {name}";
+  disable-history: true;
+
+  kb-accept-entry: "l,Ctrl+m,Return,KP_Enter";
+  /* better vim controls */
+  kb-row-down: "j,J,Ctrl+j,Alt+j,Down";
+  kb-row-up: "k,K,Ctrl+k,Alt+k,Up";
+}
+
+window {
+  width: 300;
+  location: northwest;
+  x-offset: 0;
+  y-offset: 30;
+}
+
+listview {
+  scrollbar: false;
+  lines: 5;
+}
+
+mainbox {
+	children: [listview];
+}

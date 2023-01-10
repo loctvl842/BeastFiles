@@ -1,0 +1,9 @@
+@import "./appearance.rasi"
+
+listview {
+  lines: 10;
+}
+
+textbox-prompt-colon{
+	str: " TERMINAL";
+}

@@ -1,0 +1,57 @@
+@import "../../../themes/theme.rasi"
+
+configuration {
+	font: "Hack 11";
+	icon-theme: "Hack 8";
+  display-drun: "";
+  drun-display-format: "{icon} {name}";
+}
+
+window {
+  width: 400px;
+  location: northeast;
+  x-offset: -220px;
+  y-offset: 30;
+  border-radius: 0;
+  border: 2;
+	border-color: @win-border;
+}
+
+listview {
+  lines: 10;
+	cycle: true;
+  scrollbar: false;
+}
+
+inputbar {
+  border-radius: 0;
+  margin: 3 0;
+  border: 0;
+}
+
+prompt {
+	font: "Hack Nerd Font 10";
+}
+
+entry {
+	placeholder: "Search this Beast ...";
+	placeholder-color: @foreground-opacity;
+	font: "Hack 10";
+}
+
+scrollbar {
+  width: 0px;
+  border: 0;
+}
+
+element {
+	padding: 5 32;
+}
+
+element-icon {
+	size: 16px;
+}
+
+element.selected {
+  border-radius: 0;
+}

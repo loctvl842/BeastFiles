@@ -1,0 +1,41 @@
+#!/bin/sh
+
+/* mplayer ~/.config/x/start.mp3 & */
+/* sleep 0.1 */
+
+# notificationw
+dunst &
+
+# faster keyboard
+setxkbmap -option caps:escape
+/* xset r rate 210 40 */
+xset r rate 240 50
+
+# Random Photo Every Login
+# feh --bg-fill --randomize ~/Pictures/wallpaper/* &
+feh --bg-fill ~/Pictures/wallpaper/motor.jpg &
+sleep 0.1
+
+# conky
+~/.config/conky/run.sh
+
+# Compositor
+picom --experimental-backends -b
+
+# Hide mouse when typing
+xbanish &
+
+# clipboard manager
+copyq &
+
+# brightness
+brillo -S 70
+
+# Audio
+pipewire &
+pipewire-pulse &
+pipewire-media-session &
+
+# ===================== TRAY SYSTEM ===================
+
+ibus-daemon &

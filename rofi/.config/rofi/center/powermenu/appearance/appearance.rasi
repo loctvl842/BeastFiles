@@ -1,0 +1,51 @@
+@import "../../../themes/theme.rasi"
+
+configuration {
+	font: "Fira Code 12";
+  /* better vim controls */
+  kb-row-down: "l,Ctrl+j,Alt+j,Down";
+  kb-row-up: "h,Ctrl+k,Alt+k,Up";
+}
+
+window {
+  height: 225;
+  width: 946;
+  location: center;
+}
+
+mainbox {
+  children: [ listview ];
+}
+
+
+textbox-prompt-colon {
+	str: "POWER MENU";
+}
+
+
+listview {
+  background-color: transparent;
+  cycle: false;
+  dynamic: true;
+  layout: horizontal;
+	padding: 19;
+}
+
+element {
+  background-color: transparent;
+  text-color: @foreground;
+  orientation: horizontal;
+}
+
+element-text {
+	font: "Fira Code 25";
+  text-color: @title;
+  expand: true;
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+  margin: 5% 3.6% 5% 3%;
+}
+
+element.selected {
+	border-radius: 50%;
+}

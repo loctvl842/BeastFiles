@@ -1,0 +1,50 @@
+@import "../../../themes/theme.rasi"
+
+configuration {
+	/* Better navigation */
+
+  /* keys have to be unbound before they can be reused */
+  kb-accept-entry: "l,Return,KP_Enter";
+  kb-remove-to-eol: "";
+  kb-remove-char-back: "BackSpace,Shift+BackSpace";
+  kb-mode-complete: "";
+  /* better vim controls */
+  kb-row-down: "j,Ctrl+j,Alt+j,Down";
+  kb-row-up: "k,Ctrl+k,Alt+k,Up";
+
+	hover-select: true;
+
+  /* Disable MousePrimary as an entry selector */
+  me-select-entry: "";																							/* Without this setting you won't be able to set MousePrimary as an entry acceptor. */
+  me-accept-entry: [ MousePrimary, MouseSecondary, MouseDPrimary ];	/* Use either LMB single click or RMB single click or LMB double click to accept an entry */
+}
+
+window {
+  width: 300;
+  location: center;
+}
+
+listview {
+  fixed-height: 0;
+  spacing: 0;
+  scrollbar: false;
+	padding: 0;
+  lines: 3;
+	cycle: false;
+}
+
+mainbox {
+  children: [textbox-prompt-colon, listview ];
+  background-color:  transparent;
+}
+
+element-text {
+  /* horizontal-align: 0.5; */
+  /* vertical-align: 0.5; */
+	color: @foreground;
+	font: "Fira Code Medium 12";
+}
+
+element.selected {
+   background-color: @ele-selected;
+}

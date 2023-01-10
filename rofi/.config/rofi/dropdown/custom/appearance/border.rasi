@@ -1,0 +1,43 @@
+@import "./appearance.rasi"
+
+configuration {
+  kb-accept-entry: "Ctrl+m,Return,KP_Enter";
+}
+
+window {
+	width: 320;
+	location: northeast;
+}
+
+mainbox {
+  children: [textbox-prompt-colon, inputbar];
+  background-color: transparent;
+}
+
+textbox-prompt-colon{
+	str: "BORDER";
+}
+
+inputbar {
+  border-radius: 0;
+  border-color: @inputbar-border;
+  children: [ prompt, entry ];
+  background-color: @inputbar-bg;
+	/* margin: 15 0 15 0; */
+	margin: 0;
+	padding: 10 0 10 0;
+}
+
+prompt {
+  padding: 6 0 6 15;
+  background-color: transparent;
+}
+
+entry {
+	border-radius: 0;
+	border: 0;
+  color: @foreground;
+  padding: 5;
+  background-color: transparent;
+	placeholder: "";
+}

@@ -1,0 +1,12 @@
+* {
+  background: #252526;
+	background-opacity: #25252680;
+  foreground: #a9b1d6;
+  foreground-opacity: #a9b1d680;
+  /* win-border: #9cdcfe; */
+  win-border: #25252650;
+  title: #9cdcfe;
+	ele-selected: #37373d;
+	inputbar-bg: #2c2f32;
+	inputbar-border: #7a7c7e;
+}

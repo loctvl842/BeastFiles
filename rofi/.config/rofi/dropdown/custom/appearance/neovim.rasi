@@ -1,0 +1,9 @@
+@import "./appearance.rasi"
+
+listview {
+  lines: 6;
+}
+
+textbox-prompt-colon{
+	str: " NEOVIM";
+}

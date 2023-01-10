@@ -1,0 +1,110 @@
+* {
+  background: rgba(40,44,52,0.8);
+  foreground: #abb2bf;
+
+  normal-black:   #282c34;
+  normal-red:     #e06c75;
+  normal-green:   #98c379;
+  normal-yellow:  #d19a66;
+  normal-blue:    #61afef;
+  normal-magenta: #c678dd;
+  normal-cyan:    #56b6c2;
+  normal-white:   #abb2bf;
+
+  bright-black:   #5c6370;
+  bright-red:     #e06c75;
+  bright-green:   #98c379;
+  bright-yellow:  #d19a66;
+  bright-blue:    #61afef;
+  bright-magenta: #c678dd;
+  bright-cyan:    #56b6c2;
+  bright-white:   #ffffff;
+}
+
+* {
+  background-color: rgba(0,0,0,0);
+  color: @foreground;
+}
+
+window {
+  background-color: @background;
+  border: 2;
+  border-radius: 10;
+  border-color: @bright-blue;
+  padding: 10;
+}
+
+mainbox {
+   border:  0;
+   padding: 0;
+}
+
+/* #message { */
+/*     background-color: red; */
+/* } */
+
+/* #textbox { */
+/*     background-color: red; */
+/* } */
+
+inputbar {
+   spacing: 5;
+   padding: 1;
+}
+
+prompt {
+   padding: 6;
+}
+
+entry {
+  background-color: rgba(92,99,112,0.8); /* bright-black */
+  color: @bright-cyan;
+  padding: 5px;
+  border: 1;
+  border-radius: 5;
+  border-color: @bright-blue;
+}
+
+ci {
+    border: 5;
+}
+
+listview {
+  fixed-height: 0;
+  spacing: 0;
+  scrollbar: false;
+  padding: 10 0;
+  lines: 10;
+}
+
+element {
+  padding: 5;
+  margin: 2;
+  border: 2;
+  border-radius: 5;
+  border-color: rgba(152,195,121,0.2); /* normal-green */
+}
+
+element.selected {
+   background-color: rgba(152,195,121,0.5); /* normal-green */
+}
+
+mode-switcher {
+   spacing: 20;
+}
+
+button {
+   border: 0 0 2 0;
+   border-color: red;
+   padding: 5;
+}
+
+button.selected {
+    color: #f80;
+    border-color: #f80;
+}
+
+
+
+/* vim:ft=css
+

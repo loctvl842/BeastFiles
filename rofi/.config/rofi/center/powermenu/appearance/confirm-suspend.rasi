@@ -1,0 +1,5 @@
+@import "./confirm.rasi"
+
+textbox-prompt-colon {
+	str: "Are you sure you want to suspend your computer now?";
+}

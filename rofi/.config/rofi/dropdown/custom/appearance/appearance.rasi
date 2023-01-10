@@ -1,0 +1,35 @@
+/* Choosing theme */
+@import "../../../themes/theme.rasi"
+
+configuration {
+	font: "Hack 11";
+	icon-theme: "Hack 8";
+  kb-accept-entry: "l,Ctrl+m,Return,KP_Enter";
+  kb-row-down: "j,J,Ctrl+j,Alt+j,Down";
+  kb-row-up: "k,K,Ctrl+k,Alt+k,Up";
+}
+
+window {
+  width: 220;
+  location: northeast;
+  x-offset: -45;
+  y-offset: 30;
+}
+
+listview {
+  scrollbar: false;
+  lines: 3;
+}
+
+mainbox {
+  children: [listview ];
+  background-color:  transparent;
+}
+
+element {
+	padding: 5 0;
+}
+
+element-text {
+	font: "Fira Code Medium 11";
+}

@@ -1,0 +1,9 @@
+@import "appearance.rasi"
+
+listview {
+  lines: 5;
+}
+
+textbox-prompt-colon {
+	str: "CUSTOM";
+}

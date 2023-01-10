@@ -1,0 +1,7 @@
+# min = 10
+# remove-empty = true
+# append-when-occupied = false
+# renamers = ["static"]
+#
+# [names]
+# static = ["term", "web", "code", "chat", "game"]

@@ -1,0 +1,107 @@
+* {
+  background: rgba(26,27,38,0.8);
+  foreground: #a9b1d6;
+
+  normal-black:   #32344a;
+  normal-red:     #f7768e;
+  normal-green:   #9ece6a;
+  normal-yellow:  #e0af68;
+  normal-blue:    #7aa2f7;
+  normal-magenta: #ad8ee6;
+  normal-cyan:    #449dab;
+  normal-white:   #b1b6de;
+
+  bright-black:   #444b6a;
+  bright-red:     #ff7a93;
+  bright-green:   #b9f27c;
+  bright-yellow:  #ff9e64;
+  bright-blue:    #7da6ff;
+  bright-magenta: #bb9af7;
+  bright-cyan:    #0db9d7;
+  bright-white:   #acb0d0;
+}
+
+* {
+  background-color: rgba(0,0,0,0);
+  color: @foreground;
+}
+
+window {
+  background-color: @background;
+  border: 2;
+  border-radius: 10;
+  border-color: @bright-magenta;
+  padding: 10;
+}
+
+mainbox {
+   border:  0;
+   padding: 0;
+}
+
+/* #message { */
+/*     background-color: red; */
+/* } */
+
+/* #textbox { */
+/*     background-color: red; */
+/* } */
+
+inputbar {
+  spacing: 5;
+  padding: 1;
+}
+
+prompt {
+  padding: 6;
+}
+
+entry {
+  background-color: rgba(68,75,106,0.8); /* bright-black */
+  color: @bright-cyan;
+  padding: 5px;
+  border: 1;
+  border-radius: 5;
+  border-color: @bright-blue;
+}
+
+ci {
+  border: 5;
+}
+
+listview {
+  fixed-height: 0;
+  spacing: 0;
+  scrollbar: true;
+  padding: 10 0;
+  lines: 10;
+}
+
+element {
+  padding: 5;
+  margin: 2;
+  border: 2;
+  border-radius: 5;
+  border-color: rgba(173,142,230,0.2); /* normal-magenta */
+}
+
+element.selected {
+   background-color: rgba(173,142,230,0.5); /* normal-magenta */
+}
+
+mode-switcher {
+   spacing: 20;
+}
+
+button {
+   border: 0 0 2 0;
+   /* border-color: @bright-blue; */
+   padding: 5;
+}
+
+button.selected {
+    color: @normal-blue;
+    border-color: @normal-blue;
+}
+
+/* vim:ft=css
