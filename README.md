@@ -28,5 +28,5 @@ stow --dotfiles nvim
 ```
 Install everything:
 ```
-stow *
+stow --no-folding .
 ```
