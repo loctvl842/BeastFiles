@@ -124,7 +124,7 @@ element {
 
 element-text {
 	background-color: transparent;
-	text-color: @foreground;
+	color: @foreground;
 }
 
 element-icon {
@@ -132,6 +132,7 @@ element-icon {
 }
 
 element.selected {
-   background-color: @ele-selected;
+   background-color: @ele-selected--bg;
+   color: @ele-selected--fg;
 	 border-radius: 5;
 }

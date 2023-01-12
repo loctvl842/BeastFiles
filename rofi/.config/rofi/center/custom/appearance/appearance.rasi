@@ -34,8 +34,8 @@ listview {
 }
 
 mainbox {
-  children: [textbox-prompt-colon, listview ];
-  background-color:  transparent;
+  children: [ textbox-prompt-colon, listview ];
+  background-color: transparent;
 }
 
 element-text {
@@ -46,5 +46,8 @@ element-text {
 }
 
 element.selected {
-   background-color: @ele-selected;
+   background-color: @ele-selected--bg;
+}
+element-text.selected {
+  color: @ele-selected--fg;
 }
