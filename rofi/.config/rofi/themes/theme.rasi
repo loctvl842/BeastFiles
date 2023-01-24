@@ -1,7 +1,7 @@
 @import "./mac-color.rasi"
 
 configuration {
-	font: "Fira Code 15";
+	font: "SF Mono Medium 13";
 
 	/* show application icon */
   show-icons: true;

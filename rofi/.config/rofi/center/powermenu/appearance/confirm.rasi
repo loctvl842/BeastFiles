@@ -20,6 +20,7 @@ window {
 
 mainbox {
   children: [ textbox-prompt-colon, listview ];
+  padding: 5;
   background-color: @background;
 }
 
@@ -40,11 +41,15 @@ element {
   text-color: @foreground;
   orientation: horizontal;
 	vertical-align: 0.5;
-	width: 214;
+	width: 209;
 }
 
 element-text {
-	font: "Fira Code bold 12";
+	font: "SF Mono Bold 12";
   horizontal-align: 0.5;
   vertical-align: 0.5;
+}
+
+element-text.selected {
+  text-color: @ele-selected--fg;
 }

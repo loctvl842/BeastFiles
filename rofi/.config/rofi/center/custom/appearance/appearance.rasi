@@ -22,6 +22,7 @@ configuration {
 window {
   width: 300;
   location: center;
+  padding: 5;
 }
 
 listview {
@@ -42,11 +43,11 @@ element-text {
   /* horizontal-align: 0.5; */
   /* vertical-align: 0.5; */
 	color: @foreground;
-	font: "Fira Code Medium 12";
+	font: "SF Mono Bold 12";
 }
 
 element.selected {
-   background-color: @ele-selected--bg;
+  background-color: @ele-selected--bg;
 }
 element-text.selected {
   color: @ele-selected--fg;
