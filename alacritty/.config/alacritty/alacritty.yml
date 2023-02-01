@@ -1,19 +1,19 @@
 window:
   dimensions:
-   columns: 50
+   columns: 150
    lines: 40
   position:
-   x: 1
-   y: 1
+   x: 0
+   y: 0
   padding:
    x: 5
-   y: 5
+   y: 0
   dynamic_padding: true
   # Values for `decorations`:
   #     - full: Borders and title bar
   #     - none: Neither borders nor title bar
   decorations: none
-  opacity: 1
+  opacity: 0.9
   Values for `startup_mode`:
   #   - Windowed
   #   - Maximized
@@ -161,23 +161,53 @@ schemes:
         cyan:    '#0db9d7'
         white:   '#acb0d0'
 
+###########################################    Monokai-pro   ############
+schemes:
+  tokyo-night: &monokai-pro
+    # Default colors
+    primary:
+      background: '#2d2a2e'
+      foreground: '#fcfcfa'
+
+    # Normal colors
+    normal:
+      black:   '#221f22'
+      red:     '#ff6188'
+      green:   '#a9dc76'
+      yellow:  '#ffd866'
+      blue:    '#fc9867'
+      magenta: '#ab9df2'
+      cyan:    '#78dce8'
+      white:   '#fcfcfa'
+
+    # Bright colors
+    bright:
+      black:   '#221f22'
+      red:     '#ff6188'
+      green:   '#a9dc76'
+      yellow:  '#ffd866'
+      blue:    '#fc9867'
+      magenta: '#ab9df2'
+      cyan:    '#78dce8'
+      white:   '#fcfcfa'
+
 ###################################### Set Theme #####################################
-colors: *dracula
+colors: *monokai-pro
 
 ###############################################      cursor      ##############################################
 ################################################################# Font configuration
 font:
   normal:
-    family: Fira Code
-    style: Regular
+    family: Cascadia Code
+    style: Medium
   bold:
-    family: Fira Code
+    family: Cascadia Code
     style: Bold
   italic:
-    family: Operator Mono SSm Lig Book
+    family: Cascadia Code
     style: Italic
   bold_italic:
-    family: Operator Mono
+    family: Cascadia Code
     style: Bold Italic
 
 # font:
@@ -195,11 +225,11 @@ font:
 #     style: Bold Italic
 
   # Point size
-  size: 9
+  size: 8
 
   offset:
    x: 0
-   y: 0
+   y: 3
   glyph_offset:
    x: 0
    y: 0

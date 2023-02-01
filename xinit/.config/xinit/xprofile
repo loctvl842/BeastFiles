@@ -1,14 +1,14 @@
 #!/bin/sh
 
-/* mplayer ~/.config/x/start.mp3 & */
-/* sleep 0.1 */
+# mplayer ~/.config/x/start.mp3 &
+# sleep 0.1
 
 # notificationw
 dunst &
 
 # faster keyboard
 setxkbmap -option caps:escape
-/* xset r rate 210 40 */
+# xset r rate 210 40
 xset r rate 240 50
 
 # Random Photo Every Login

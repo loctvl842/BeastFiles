@@ -1,8 +1,8 @@
+#! /bin/bash
+
 # `brillo` does the same thing to `light`
 # but `brillo` decrease the percentage of brightness exactly linear
 # https://konradstrack.ninja/blog/changing-screen-brightness-in-accordance-with-human-perception/
-
-#!/bin/bash
 
 function send_notification() {
 	brightness=$(brillo -G | cut -d '.' -f 1)
