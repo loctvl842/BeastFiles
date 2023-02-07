@@ -163,7 +163,7 @@ schemes:
 
 ###########################################    Monokai-pro   ############
 schemes:
-  tokyo-night: &monokai-pro
+  monokai-pro: &monokai-pro
     # Default colors
     primary:
       background: '#2d2a2e'

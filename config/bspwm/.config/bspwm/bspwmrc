@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 bspc rule -r "*"
 
@@ -78,7 +78,7 @@ bspc rule -a com-sun-tools-javac-launcher-Main state=floating
 bspc rule -a flameshot state=floating
 bspc rule -a Messenger\ call\ -\ Brave rectangle=450x800+1400+50 state=floating
 bspc rule -a Gpick state=floating
-
+bspc rule -a Deno state=tiled
 bspc rule -a Ulauncher border=off state=floating
 
 # bspc rule -a \* rectangle 800x600+0+0 center=true
