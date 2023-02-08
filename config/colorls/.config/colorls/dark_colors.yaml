@@ -1,8 +1,8 @@
 # Main Colors
 unrecognized_file: blue
-recognized_file:   yellow
+recognized_file:   white
 executable_file:   green
-dir:               cyan
+dir:               yellow
 
 # Link
 dead_link: red
