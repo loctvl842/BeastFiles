@@ -28,3 +28,11 @@ listview {
 mainbox {
 	children: [listview];
 }
+
+element-text {
+  text-color: @foreground;
+}
+
+element-text.selected {
+  text-color: @ele-selected--fg;
+}

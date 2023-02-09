@@ -4,11 +4,11 @@ wm=$(wmctrl -m | grep Name | grep -oP ': \K\w+')
 
 rofi_command="rofi -theme $DROPDOWN_POWERMENU_APPEARANCE_DIR/appearance.rasi"
 
-shutdown="  Shut Down"
-reboot="  Restart"
-lock="  Lock Screen"
-suspend="  Suspend"
-logout="  Log Out"
+shutdown="󰤆 Shut Down"
+reboot="󰜉 Restart"
+lock=" Lock Screen"
+suspend=" Suspend"
+logout="󰍃 Log Out"
 
 options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
 
