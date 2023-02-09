@@ -1,7 +1,7 @@
 @import "appearance.rasi"
  
 listview {
-  lines: 6;
+  lines: 4;
 }
 
 textbox-prompt-colon {

@@ -44,8 +44,8 @@ textbox-prompt-colon {
 }
 
 element-text {
-  horizontal-align: 0.44;
-  /* vertical-align: 0.45; */
+  horizontal-align: 0.45;
+  vertical-align: 0;
 	color: @foreground;
 	font: "SF Pro Bold 12";
 }
