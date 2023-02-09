@@ -22,6 +22,6 @@ DROPDOWN_POWERMENU_APPEARANCE_DIR="$ROFI_DROPDOWN/powermenu/appearance"
 ###############################################################################
 ###########           Sepecial string for element              ################
 ###############################################################################
-prefix="﬌       "
-close="            "
-previous="            "
+prefix=""
+close=""
+previous=""

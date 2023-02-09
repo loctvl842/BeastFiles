@@ -4,7 +4,7 @@
     "disable-desktop-filters": true,
     "grab-mouse-pointer": true,
     "hotkey-show-app": "<Super>backslash",
-    "render-on-screen": "mouse-pointer-monitor",
+    "render-on-screen": "default-monitor",
     "show-indicator-icon": false,
     "show-recent-apps": "5",
     "terminal-command": "kitty",

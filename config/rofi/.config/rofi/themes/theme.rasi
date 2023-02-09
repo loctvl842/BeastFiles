@@ -114,7 +114,7 @@ mainbox {
 
 
 element {
-  padding: 14 0 14 0;
+  padding: 10 0 10 0;
   border: 2;
 	border-radius: 0;
 	background-color: transparent;

@@ -5,5 +5,5 @@ listview {
 }
 
 textbox-prompt-colon{
-	str: " NEOVIM";
+	str: "NEOVIM";
 }

@@ -25,7 +25,7 @@ mainbox {
 }
 
 textbox-prompt-colon {
-	font: "Fira Code Medium 12";
+	font: "SF Pro Medium 12";
 	str: "Are you sure you want to shut down your computer now?";
   padding: 2% 1% 2% 1%;
 }
@@ -45,7 +45,7 @@ element {
 }
 
 element-text {
-	font: "SF Mono Bold 12";
+	font: "SF Pro Bold 12";
   horizontal-align: 0.5;
   vertical-align: 0.5;
 }

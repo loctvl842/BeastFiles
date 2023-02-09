@@ -9,7 +9,6 @@ KITTY_CONF="/home/loc/.config/kitty/kitty.conf"
 function change_theme() {
   colorscheme_id=$1
   if [[ $terminal == "kitty" ]]; then
-    dunstify 'loc'
     sed -i -e "0,/include\ \.\/themes\/.*/s//include .\/themes\/monokai\/monokai-pro$colorscheme_id\.conf/" $KITTY_CONF
     kill -SIGUSR1 $(pgrep kitty)
   elif [[ $terminal == "alacritty" ]]; then
@@ -29,10 +28,10 @@ function nav_back() {
 MENU="$(rofi -sep "|" \
         -dmenu -i -p 'System' \
         -theme $CENTER_CUSTOM_APPEARANCE_DIR/monokai.rasi \
-        <<< "       $previous|"$prefix"Monokai Pro|"$prefix"Monokai Pro Classic|"$prefix"Monokai Pro (Filter Machine)|"$prefix"Monokai Pro (Filter Octagon)|"$prefix"Monokai Pro (Filter Ristretto)|"$prefix"Monokai Pro (Filter Spectrum)")"
+        <<< "$previous|"$prefix"Monokai Pro|"$prefix"Monokai Pro Classic|"$prefix"Monokai Pro (Filter Machine)|"$prefix"Monokai Pro (Filter Octagon)|"$prefix"Monokai Pro (Filter Ristretto)|"$prefix"Monokai Pro (Filter Spectrum)")"
 
   case "$MENU" in
-      *"       $previous") nav_back;;
+      *"$previous") nav_back;;
       *""$prefix"Monokai Pro") change_theme "";;
       *""$prefix"Monokai Pro Classic") change_theme "_classic";;
 			*""$prefix"Monokai Pro (Filter Machine)") change_theme "_machine";;

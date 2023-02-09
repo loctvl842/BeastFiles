@@ -39,11 +39,15 @@ mainbox {
   background-color: transparent;
 }
 
+textbox-prompt-colon {
+	font: "SF Pro Bold 15";
+}
+
 element-text {
-  /* horizontal-align: 0.5; */
-  /* vertical-align: 0.5; */
+  horizontal-align: 0.44;
+  /* vertical-align: 0.45; */
 	color: @foreground;
-	font: "SF Mono Bold 12";
+	font: "SF Pro Bold 12";
 }
 
 element.selected {

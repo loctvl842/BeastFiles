@@ -1,4 +1,0 @@
-# Introduction
-
-Testing
-

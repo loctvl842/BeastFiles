@@ -5,5 +5,5 @@ listview {
 }
 
 textbox-prompt-colon{
-	str: " POLYBAR";
+	str: "POLYBAR";
 }

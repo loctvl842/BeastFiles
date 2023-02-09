@@ -1,7 +1,7 @@
 @import "../../../themes/theme.rasi"
 
 configuration {
-	font: "Hack Nerd Font 12";
+	font: "Fira Code Nerd Font 12";
   drun-display-format: "{icon} {name}";
   disable-history: true;
 
@@ -12,6 +12,7 @@ configuration {
 }
 
 window {
+	font: "Hack Nerd Font 12";
   width: 300;
   location: northwest;
   x-offset: 0;
@@ -19,6 +20,7 @@ window {
 }
 
 listview {
+	font: "Fira Code Nerd Font 12";
   scrollbar: false;
   lines: 5;
 }
