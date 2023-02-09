@@ -1,0 +1,17 @@
+<Glyph name="bar_greater.liga" lsb="-289" width="625">
+    <CharString>
+        -289 665 vstem
+        -289 781 rmoveto
+        -983 85 vlineto
+        580 488 rlineto
+        77 vlineto
+        -580 426 rlineto
+        -884 vmoveto
+        782 vlineto
+        496 -357 rlineto
+        -11 vlineto
+        endchar
+    </CharString>
+    <Subrs/>
+    <GlobalSubrs/>
+</Glyph>

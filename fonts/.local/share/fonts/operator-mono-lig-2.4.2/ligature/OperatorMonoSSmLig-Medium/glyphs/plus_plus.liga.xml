@@ -1,0 +1,11 @@
+<Glyph name="plus_plus.liga" lsb="-484" width="625">
+    <CharString>
+        279 103 hstem
+        -296 110 374 110 vstem
+        298 579 rmoveto
+        -110 -197 -374 197 -110 -197 -188 -103 188 -198 110 198 374 -198 110 198 186 103 -186 hlineto
+        endchar
+    </CharString>
+    <Subrs/>
+    <GlobalSubrs/>
+</Glyph>

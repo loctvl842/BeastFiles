@@ -1,0 +1,33 @@
+<Glyph name="exclam_equal_equal.liga" lsb="-1018" width="550">
+    <CharString>
+        16 61 187 60 187 60 hstem
+        -603 665 vstem
+        576 571 rmoveto
+        -597 hlineto
+        83 118 -47 23 -99 -141 rlineto
+        -826 hlineto
+        -12 -60 rlineto
+        795 hlineto
+        -132 -187 rlineto
+        -699 hlineto
+        -12 -60 rlineto
+        669 hlineto
+        -132 -187 rlineto
+        -573 hlineto
+        -12 -61 rlineto
+        542 hlineto
+        -127 -180 53 -14 137 194 rlineto
+        880 hlineto
+        13 61 rlineto
+        -850 hlineto
+        132 187 rlineto
+        753 hlineto
+        13 60 rlineto
+        -724 hlineto
+        132 187 rlineto
+        627 hlineto
+        endchar
+    </CharString>
+    <Subrs/>
+    <GlobalSubrs/>
+</Glyph>

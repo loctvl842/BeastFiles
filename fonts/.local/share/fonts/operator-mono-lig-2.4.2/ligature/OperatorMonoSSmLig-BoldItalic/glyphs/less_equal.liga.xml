@@ -1,0 +1,13 @@
+<Glyph name="less_equal.liga" lsb="-411" width="625">
+    <CharString>
+        29 -21 700 -20 hstem
+        -411 921 vstem
+        -129 325 rmoveto
+        3 14 636 240 -22 129 -824 -311 -25 -129 696 -313 71 127 rlineto
+        -122 -387 rmoveto
+        72 127 -738 335 -29 -149 rlineto
+        endchar
+    </CharString>
+    <Subrs/>
+    <GlobalSubrs/>
+</Glyph>

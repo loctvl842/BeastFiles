@@ -1,0 +1,25 @@
+<Glyph name="greater_equal_greater.liga" lsb="-1033" width="550">
+    <CharString>
+        156 52 171 52 hstemhm
+        -1033 417 -394 1469 -392 417 hintmask 11010000
+        165 551 rmoveto
+        119 -120 rlineto
+        -1022 hlineto
+        -156 160 -41 -40 259 -262 -2 -8 rlineto
+        hintmask 11100000
+        -355 -252 27 -46 243 173 rlineto
+        1009 hlineto
+        hintmask 11001000
+        -179 -127 27 -46 380 271 10 52 -278 285 rlineto
+        113 -383 rmoveto
+        -1010 hlineto
+        65 46 rlineto
+        hintmask 11100000
+        10 52 -71 73 rlineto
+        1022 hlineto
+        89 -90 -2 -8 rlineto
+        endchar
+    </CharString>
+    <Subrs/>
+    <GlobalSubrs/>
+</Glyph>

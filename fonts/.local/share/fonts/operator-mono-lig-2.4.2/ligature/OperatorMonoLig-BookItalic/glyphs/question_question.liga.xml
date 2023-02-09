@@ -1,0 +1,29 @@
+<Glyph name="question_question.liga" lsb="-362" width="550">
+    <CharString>
+        0 109 hstem
+        -53 89 291 89 vstem
+        -340 600 rmoveto
+        190 -22 97 -30 -73 vvcurveto
+        -57 -58 -54 -176 -91 vhcurveto
+        25 -43 rlineto
+        215 108 83 81 84 vvcurveto
+        95 -116 55 -244 26 vhcurveto
+        364 -79 rmoveto
+        190 -22 97 -30 -73 vvcurveto
+        -57 -58 -54 -176 -91 vhcurveto
+        25 -43 rlineto
+        215 108 83 81 84 vvcurveto
+        95 -116 55 -244 26 vhcurveto
+        -311 -679 rmoveto
+        22 109 rlineto
+        -107 hlineto
+        -22 -109 rlineto
+        487 hmoveto
+        22 109 rlineto
+        -107 hlineto
+        -22 -109 rlineto
+        endchar
+    </CharString>
+    <Subrs/>
+    <GlobalSubrs/>
+</Glyph>

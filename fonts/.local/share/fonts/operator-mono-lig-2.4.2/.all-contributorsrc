@@ -1,0 +1,99 @@
+{
+  "projectName": "operator-mono-lig",
+  "projectOwner": "kiliman",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "kiliman",
+      "name": "Kiliman",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/47168?v=4",
+      "profile": "https://github.com/kiliman",
+      "contributions": [
+        "code",
+        "doc",
+        "design"
+      ]
+    },
+    {
+      "login": "mskelton",
+      "name": "Mark Skelton",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/25914066?v=4",
+      "profile": "https://github.com/mskelton",
+      "contributions": [
+        "design"
+      ]
+    },
+    {
+      "login": "drod3763",
+      "name": "Derick Rodriguez",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7785716?v=4",
+      "profile": "https://github.com/drod3763",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "amitkparekh",
+      "name": "Amit Parekh",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/7276308?v=4",
+      "profile": "https://github.com/amitkparekh",
+      "contributions": [
+        "doc",
+        "design"
+      ]
+    },
+    {
+      "login": "CandySunPlus",
+      "name": "NikSun",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/502700?v=4",
+      "profile": "https://github.com/CandySunPlus",
+      "contributions": [
+        "design"
+      ]
+    },
+    {
+      "login": "Jakob6174",
+      "name": "Jakob Pearson",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/40262817?v=4",
+      "profile": "https://github.com/Jakob6174",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Kilua99",
+      "name": "kilua99",
+      "avatar_url": "https://avatars.githubusercontent.com/u/44760686?v=4",
+      "profile": "https://github.com/Kilua99",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "GlorifiedBicycle",
+      "name": "Reland Boyle",
+      "avatar_url": "https://avatars.githubusercontent.com/u/71753585?v=4",
+      "profile": "https://github.com/GlorifiedBicycle",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "killua99",
+      "name": "Luigi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/457822?v=4",
+      "profile": "http://killua.me/",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}

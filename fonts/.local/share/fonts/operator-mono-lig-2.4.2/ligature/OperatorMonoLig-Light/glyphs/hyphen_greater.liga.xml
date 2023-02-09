@@ -1,0 +1,15 @@
+<Glyph name="hyphen_greater.liga" lsb="-430" width="550">
+    <CharString>
+        264 52 hstem
+        -430 890 vstem
+        97 552 rmoveto
+        280 -236 rlineto
+        -807 -52 807 hlineto
+        -286 -242 35 -42 334 283 rlineto
+        54 vlineto
+        -327 278 rlineto
+        endchar
+    </CharString>
+    <Subrs/>
+    <GlobalSubrs/>
+</Glyph>

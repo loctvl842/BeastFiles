@@ -1,0 +1,25 @@
+<Glyph name="colon_equal.liga" lsb="-394" width="625">
+    <CharString>
+        144 115 133 115 hstem
+        -394 801 vstem
+        -242 392 rmoveto
+        26 115 rlineto
+        -108 hlineto
+        -23 -115 rlineto
+        754 87 rmoveto
+        -529 hlineto
+        -11 -59 rlineto
+        528 hlineto
+        -684 -276 rmoveto
+        26 115 rlineto
+        -108 hlineto
+        -23 -115 rlineto
+        753 88 rmoveto
+        -528 hlineto
+        -12 -60 rlineto
+        528 hlineto
+        endchar
+    </CharString>
+    <Subrs/>
+    <GlobalSubrs/>
+</Glyph>
