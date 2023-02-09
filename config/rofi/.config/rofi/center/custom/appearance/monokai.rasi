@@ -1,0 +1,13 @@
+@import "./appearance.rasi"
+
+window {
+  width: 450;
+}
+
+listview {
+  lines: 7;
+}
+
+textbox-prompt-colon{
+	str: "MONOKAI";
+}

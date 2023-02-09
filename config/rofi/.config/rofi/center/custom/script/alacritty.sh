@@ -1,0 +1,1 @@
+dunstify "Config alacritty please"
