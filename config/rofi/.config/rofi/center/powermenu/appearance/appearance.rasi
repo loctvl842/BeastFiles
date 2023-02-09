@@ -1,15 +1,15 @@
 @import "../../../themes/theme.rasi"
 
 configuration {
-	font: "Fira Code 12";
+	font: "Fira Code Nerd Font 12";
   /* better vim controls */
   kb-row-down: "l,Ctrl+j,Alt+j,Down";
   kb-row-up: "h,Ctrl+k,Alt+k,Up";
 }
 
 window {
-  height: 207;
-  width: 946;
+  height: 237;
+  width: 1021;
   location: center;
 }
 
@@ -38,12 +38,12 @@ element {
 }
 
 element-text {
-	font: "Fira Nerd Font 25";
+	font: "Fira Code Nerd Font 35";
   text-color: @foreground;
   expand: true;
   horizontal-align: 0.5;
   vertical-align: 0.5;
-  margin: 5% 3.6% 5% 3%;
+  margin: 5% 4.4% 5% 3.2%;
 }
 
 element.selected {

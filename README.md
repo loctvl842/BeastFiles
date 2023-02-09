@@ -4,12 +4,12 @@
 
 Check my **Neovim** config [loctvl842/nvim](https://github.com/loctvl842/nvim#neovim-config)
 
-### ✍ Requirement
+## 🔒 Requirement
 
 - `stow`
 - `git`
 
-### 📦 Installation
+## 📦 Installation
 
 Clone into your `$HOME` directory
 
@@ -42,3 +42,19 @@ In order to install all packages
 ```bash
 stow -t ~ *
 ```
+
+## 🤟Fonts
+
+**Emoji**
+- [NotoColorEmoji](https://github.com/googlefonts/noto-emoji)
+
+**Icon**
+- [material-design-iconic-font](https://github.com/zavoloklom/material-design-iconic-font/releases/download/2.2.0/material-design-iconic-font.zip)
+- [codicon](https://github.com/microsoft/vscode-codicons/raw/main/dist/codicon.ttf)
+
+**Text**
+- [Cascadia Code](https://github.com/microsoft/cascadia-code/releases)
+- [Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
+> Install Mono will get small icons
+- [Fira Code](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode)
+- [San Francisco Pro](https://drive.google.com/file/d/1-vLGyDO-q7ciBclaPWY5ObLoPYfyh1q8/view)

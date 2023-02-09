@@ -8,11 +8,11 @@ wm=$(wmctrl -m | grep Name | grep -oP ': \K\w+')
 rofi_command="rofi -theme $CENTER_POWERMENU_APPEARANCE_DIR/appearance.rasi"
 
 # Options
-shutdown=""
-reboot=""
-lock=""
-suspend=""
-logout=""
+shutdown="󰤆"
+reboot="󰜉"
+lock=""
+suspend=""
+logout="󰍃"
 
 # Confirmation
 # confirm_exit() {
