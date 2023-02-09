@@ -8,7 +8,7 @@ configuration {
 }
 
 window {
-  height: 225;
+  height: 207;
   width: 946;
   location: center;
 }
@@ -38,7 +38,7 @@ element {
 }
 
 element-text {
-	font: "Fira Code 25";
+	font: "Fira Nerd Font 25";
   text-color: @foreground;
   expand: true;
   horizontal-align: 0.5;
