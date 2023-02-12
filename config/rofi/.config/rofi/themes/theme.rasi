@@ -66,16 +66,16 @@ listview {
 }
 
 prompt {
-	font: "Hack Nerd Font 12";
-  padding: 6 10 6 15;
+	/* font: "Hack Nerd Font 12"; */
+  padding: 6 0 6 0;
   background-color: transparent;
 	text-color: @title;
 }
 
 entry {
-	font: "Hack Nerd Font 12";
+	font: "SF Mono Bold 13";
   color: @foreground;
-  padding: 6 10 6 0;
+  padding: 6 0 6 10;
   background-color: transparent;
 }
 
