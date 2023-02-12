@@ -29,4 +29,3 @@ done
 
 sed -i -e "0,/bspc\ config\ focused_border_color.*/s//bspc\ config\ focused_border_color\ '$hexColor'/" ~/.config/bspwm/bspwmrc
 bspc wm -r
-

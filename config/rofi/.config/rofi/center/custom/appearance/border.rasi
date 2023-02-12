@@ -28,6 +28,8 @@ inputbar {
   border-radius: 0;
 	margin: 0;
 	padding: 15 0 15 10;
+  background-color: transparent;
+  color: @foreground;
 }
 
 prompt {
