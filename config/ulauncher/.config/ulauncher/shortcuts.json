@@ -1,32 +1,32 @@
 {
-    "22e45793-7085-4ab4-926e-9c3ca7bc1005": {
-        "id": "22e45793-7085-4ab4-926e-9c3ca7bc1005",
-        "name": "Google Search",
-        "keyword": "g",
-        "cmd": "https://google.com/search?q=%s",
-        "icon": "/usr/share/ulauncher/media/google-search-icon.png",
-        "is_default_search": true,
-        "run_without_argument": false,
-        "added": 1672850290.8562987
-    },
-    "bed2158f-700a-4a2b-92f5-661f94fec13f": {
-        "id": "bed2158f-700a-4a2b-92f5-661f94fec13f",
-        "name": "Stack Overflow",
-        "keyword": "so",
-        "cmd": "https://stackoverflow.com/search?q=%s",
-        "icon": "/usr/share/ulauncher/media/stackoverflow-icon.svg",
-        "is_default_search": true,
-        "run_without_argument": false,
-        "added": 1672850290.856317
-    },
-    "2cc3e7d0-95f6-439d-922a-fc9e12f667d3": {
-        "id": "2cc3e7d0-95f6-439d-922a-fc9e12f667d3",
-        "name": "Wikipedia",
-        "keyword": "wiki",
-        "cmd": "https://en.wikipedia.org/wiki/%s",
-        "icon": "/usr/share/ulauncher/media/wikipedia-icon.png",
-        "is_default_search": true,
-        "run_without_argument": false,
-        "added": 1672850290.8563285
-    }
+  "22e45793-7085-4ab4-926e-9c3ca7bc1005": {
+    "id": "22e45793-7085-4ab4-926e-9c3ca7bc1005",
+    "name": "Google Search",
+    "keyword": "g",
+    "cmd": "https://google.com/search?q=%s",
+    "icon": "/usr/share/ulauncher/media/google-search-icon.png",
+    "is_default_search": true,
+    "run_without_argument": false,
+    "added": 1672850290.8562987
+  },
+  "bed2158f-700a-4a2b-92f5-661f94fec13f": {
+    "id": "bed2158f-700a-4a2b-92f5-661f94fec13f",
+    "name": "Stack Overflow",
+    "keyword": "so",
+    "cmd": "https://stackoverflow.com/search?q=%s",
+    "icon": "/usr/share/ulauncher/media/stackoverflow-icon.svg",
+    "is_default_search": true,
+    "run_without_argument": false,
+    "added": 1672850290.856317
+  },
+  "2cc3e7d0-95f6-439d-922a-fc9e12f667d3": {
+    "id": "2cc3e7d0-95f6-439d-922a-fc9e12f667d3",
+    "name": "Wikipedia",
+    "keyword": "wiki",
+    "cmd": "https://en.wikipedia.org/wiki/%s",
+    "icon": "/usr/share/ulauncher/media/wikipedia-icon.png",
+    "is_default_search": true,
+    "run_without_argument": false,
+    "added": 1672850290.8563285
+  }
 }
