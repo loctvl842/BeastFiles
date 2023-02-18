@@ -76,10 +76,11 @@ bspc rule -a Conky-manager state=floating
 bspc rule -a Tk state=floating
 bspc rule -a com-sun-tools-javac-launcher-Main state=floating
 bspc rule -a flameshot state=floating
-bspc rule -a Messenger\ call\ -\ Brave rectangle=450x800+1400+50 state=floating
 bspc rule -a Gpick state=floating
 bspc rule -a Deno state=tiled
 bspc rule -a Ulauncher border=off state=floating
+bspc rule -a Protonvpn border=on state=floating center=on
+bspc rule -a photoshop.exe border=on state=fullscreen
 
 # bspc rule -a \* rectangle 800x600+0+0 center=true
 

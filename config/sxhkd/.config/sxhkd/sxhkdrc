@@ -49,7 +49,7 @@ super + {equal,minus}
 ##################            TOGGLE POLYBAR            #########################
 #################################################################################
 super + b
-  ~/.config/bspwm/src/toggle-polybar.sh
+  ~/.config/bspwm/src/toggle_polybar.sh
 
 #################################################################################
 ##################           CLOSE/KILL WINDOW          #########################
@@ -101,7 +101,7 @@ super + bracketleft
 ##################           BATTERY 					###################################
 #################################################################################
 super + F10
-  ~/.config/bspwm/src/touchpad_toggle.sh 
+  ~/.config/bspwm/src/toggle_touchpad.sh
 
 super + F11
   ~/.config/bspwm/src/toggle_keyboard.sh
@@ -194,7 +194,7 @@ alt + {h,j,k,l}
 ##################          RANDOM WALLPAPER            #########################
 #################################################################################
 super + r
-	~/.config/bspwm/src/random-wallpaper.sh
+	~/.config/bspwm/src/random_wallpaper.sh
 
 #################################################################################
 ##################          MOVE AROUND WINDOW          #########################
@@ -229,7 +229,7 @@ super + alt + y
 ##################           BATTERY 					###################################
 #################################################################################
 super + shift + b
-	~/.config/bspwm/src/battery-cap.sh
+	~/.config/bspwm/src/battery_cap.sh
 
 # set the node flags
 super + ctrl + {m,x,z}
