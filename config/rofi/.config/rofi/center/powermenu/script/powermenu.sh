@@ -9,8 +9,8 @@ rofi_command="rofi -theme $CENTER_POWERMENU_APPEARANCE_DIR/appearance.rasi"
 
 # Options
 shutdown="󰤆"
-reboot="󰜉"
-lock=""
+reboot=""
+lock="󰍁"
 suspend=""
 logout="󰍃"
 
