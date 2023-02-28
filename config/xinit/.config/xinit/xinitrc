@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# TERM=/usr/bin/kitty
-# EDITOR=/usr/local/bin/nvim
-# BROWSER=/usr/bin/brave
 userresources=$HOME/.config/xinit/Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
