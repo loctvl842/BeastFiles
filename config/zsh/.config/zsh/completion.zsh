@@ -6,4 +6,4 @@ zmodload zsh/complist
 compinit
 
 setxkbmap -option caps:escape
-xset r rate 240 50
+xset r rate 240 60

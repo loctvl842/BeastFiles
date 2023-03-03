@@ -9,7 +9,9 @@ dunst &
 # faster keyboard
 setxkbmap -option caps:escape
 # xset r rate 210 40
-xset r rate 240 50
+xset r rate 240 60
+# - 240: delay time before a held key begins to repeat
+# - 60: repeat rate for a held key (speed when holding a key for moving)
 
 # Random Photo Every Login
 # feh --bg-fill --randomize ~/Pictures/wallpaper/* &
