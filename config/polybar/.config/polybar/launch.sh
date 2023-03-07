@@ -7,12 +7,12 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 0.2; done
 
 shape="Single"
 
-fix bspwm top gap
+# fix bspwm top gap
 wm=$(wmctrl -m | grep Name | grep -oP ': \K\w+')
 
 if [[ $wm == "bspwm" ]]; then
 	ADDITIONAL_GAP=0
-	BSPWM_CONFIG='/home/loc/.config/bspwm/bspwmrc'
+	BSPWM_CONFIG="$HOME/.config/bspwm/bspwmrc"
 
 	height=$(grep -w height ~/.config/polybar/bar-settings.ini | grep -oP 'height = \K\w+')
 	border_size=$(grep -w border-size ~/.config/polybar/bar-settings.ini | grep -oP 'border-size = \K\w+')

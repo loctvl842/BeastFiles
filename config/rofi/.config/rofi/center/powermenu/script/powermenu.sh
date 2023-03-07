@@ -67,6 +67,8 @@ case $chosen in
     $lock)
 			if [[ -f /usr/bin/i3lock ]]; then
 				i3lock-fancy-rapid 5 3
+      else
+        xsecurelock
 			fi
 			;;
 
