@@ -10,7 +10,7 @@ fi
 
 screenlayout="right"
 
-if [[ $(xrandr -q | grep 'HDMI' | grep -oP 'HDMI-A-0 \K\w+') == "connected" ]]; then
+if [[ $(xrandr -q | grep 'HDMI' | grep -oP 'HDMI-1 \K\w+') == "connected" ]]; then
   killall btops
   if [[ $screenlayout == 'left' ]]; then
     $HOME/.screenlayout/leftScreen.sh
