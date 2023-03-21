@@ -1,0 +1,16 @@
+{
+	"telemetryDisabled": false,
+	"cliId": "81ee825f-de0a-429c-8c15-c1bee3915002",
+	"userId": "61b0706c489332b7c58a3eef",
+	"users": {
+		"61b0706c489332b7c58a3eef": {
+			"id": "61b0706c489332b7c58a3eef",
+			"name": null,
+			"email": "loc.letvl842002@hcmut.edu.vn",
+			"auth": {
+				"token": "6u4ppQL7oRriQaDVVHX_rgH887MemP8h44rpsDc3CLY",
+				"github": {}
+			}
+		}
+	}
+}
