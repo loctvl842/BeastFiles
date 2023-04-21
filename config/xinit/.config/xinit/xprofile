@@ -15,7 +15,7 @@ xset r rate 240 60
 
 # Random Photo Every Login
 # feh --bg-fill --randomize ~/Pictures/wallpaper/* &
-feh --bg-fill ~/Pictures/wallpaper/motor.jpg &
+feh --bg-fill ~/Pictures/wallpaper/zombies_fantasy_art_89548_1920x1080.jpg &
 sleep 0.1
 
 # conky
@@ -41,3 +41,5 @@ pipewire-media-session &
 # ===================== TRAY SYSTEM ===================
 
 ibus-daemon &
+
+ulauncher --hide-window &

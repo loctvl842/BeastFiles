@@ -10,8 +10,16 @@ export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.local/share/go/bin:$PATH
-export GOPATH=$HOME/.local/share/go
 export PATH=$HOME/.fnm:$PATH
+# react native tools
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+# java
+export JAVA_HOME=/usr/lib/jvm/default
+export PATH=$PATH:$JAVA_HOME/bin
+
+export GOPATH=$HOME/.local/share/go
 # export PATH="$PATH:./node_modules/.bin"
 eval "$(fnm env)"
 eval "$(zoxide init zsh)"
@@ -26,13 +34,13 @@ export LC_ALL=en_US.UTF-8
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$("$HOME/.miniconda/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
+  eval "$__conda_setup"
 else
-    if [ -f "$HOME/.miniconda/etc/profile.d/conda.sh" ]; then
-        . "$HOME/.miniconda/etc/profile.d/conda.sh"
-    else
-        export PATH="$HOME/.miniconda/bin:$PATH"
-    fi
+  if [ -f "$HOME/.miniconda/etc/profile.d/conda.sh" ]; then
+    . "$HOME/.miniconda/etc/profile.d/conda.sh"
+  else
+    export PATH="$HOME/.miniconda/bin:$PATH"
+  fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<

@@ -9,7 +9,11 @@
 			"email": "loc.letvl842002@hcmut.edu.vn",
 			"auth": {
 				"token": "6u4ppQL7oRriQaDVVHX_rgH887MemP8h44rpsDc3CLY",
-				"github": {}
+				"github": {
+					"user": "loctvl842",
+					"token": "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",
+					"provider": "github"
+				}
 			}
 		}
 	}

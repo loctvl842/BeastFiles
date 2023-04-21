@@ -11,7 +11,8 @@ super + Return
 # super + {_, shift} + d
 # 	~/.config/rofi/{center,dropdown}/launcher/script/launcher.sh
 super + d
-  ~/.config/bspwm/src/ulauncher.sh
+  ulauncher-toggle
+  # ~/.config/bspwm/src/ulauncher.sh
 
 # ------------- Poweer menu --------------------------------
 super + {_, shift}+ p
