@@ -8,8 +8,8 @@ super + Return
 ##################            ROFI LAUNCHER             #########################
 #################################################################################
 # ------------- App launcher -------------------------------
-# super + {_, shift} + d
-# 	~/.config/rofi/{center,dropdown}/launcher/script/launcher.sh
+super + shift + d
+	~/.config/rofi/center/launcher/script/launcher.sh
 super + d
   ulauncher-toggle
   # ~/.config/bspwm/src/ulauncher.sh
@@ -65,7 +65,7 @@ super + q
 ##################          TILED OR MONOCLE            #########################
 #################################################################################
 super + m
-	~/.config/bspwm/src/make_monocle.sh
+	~/.config/bspwm/src/bspc_monocle.sh
 
 #################################################################################
 ##################       SWAP CURRENT/BIGGEST NODE      #########################
@@ -86,10 +86,10 @@ super + {shift + t, f}
 	bspc node -t {pseudo_tiled,floating}
 
 super + space
-  $HOME/.config/bspwm/src/toggle_fullscreen.sh
+  $HOME/.config/bspwm/src/bspc_fullscreen.sh
 
 super + t
-  $HOME/.config/bspwm/src/make_tiled.sh
+  $HOME/.config/bspwm/src/bspc_tiled.sh
   
 #################################################################################
 ##################            TOGGLE LANGUAGE           #########################

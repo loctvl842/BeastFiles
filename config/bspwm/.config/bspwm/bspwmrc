@@ -2,13 +2,21 @@
 
 bspc rule -r "*"
 
-polybar=$(pgrep -x polybar > /dev/null && echo "Process found" || echo "Process not found")
-if [[ $polybar == "Process not found" ]]; then
-  # ~/.config/bspwm/src/start-polybar.sh &
-  $HOME/.config/polybar/launch.sh &
+bar="polybar"
+
+if [[ $bar == "polybar" ]]; then
+  killall gnome-panel
+  polybar=$(pgrep -x polybar > /dev/null && echo "Process found" || echo "Process not found")
+  if [[ $polybar == "Process not found" ]]; then
+    # ~/.config/bspwm/src/start-polybar.sh &
+    $HOME/.config/polybar/launch.sh &
+  fi
+elif [[ $bar == "gnome-panel" ]]; then
+  killall polybar
+  gnome-panel &
 fi
 
-screenlayout="left"
+screenlayout="kietem"
 
 if [[ $(xrandr -q | grep 'HDMI' | grep -oP 'HDMI-1 \K\w+') == "connected" ]]; then
   killall btops
@@ -32,8 +40,9 @@ if [[ $(xrandr -q | grep 'HDMI' | grep -oP 'HDMI-1 \K\w+') == "connected" ]]; th
     # bspc monitor HDMI-A-0 -d 2 3 4 5 6 7 8 9 10
   fi
 else
+  bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 10
   killall btops
-  btops &
+  btops
 fi
 
 pgrep -x sxhkd > /dev/null || sxhkd &
@@ -50,6 +59,8 @@ bspc config top_padding 38
 bspc config left_padding 10
 bspc config right_padding 10
 bspc config bottom_padding 10
+bspc config automatic_scheme alternate
+bspc config automatic_scheme @remove alternate
 
 # border color
 bspc config normal_border_color "#3b3f4c"

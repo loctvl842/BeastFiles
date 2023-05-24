@@ -36,8 +36,10 @@ fi
 source $HOME/.config/xinit/xprofile
 # source $HOME/.config/xinit/Xresources
 
-export ANTLR_JAR=$HOME/Downloads/antlr-4.9.2-complete.jar
 export GDK_BACKEND=x11
 
 # exec i3
 exec bspwm
+
+# export XDG_SESSION_TYPE=x11
+# exec gnome-session

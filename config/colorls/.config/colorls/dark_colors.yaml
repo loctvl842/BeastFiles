@@ -2,7 +2,7 @@
 unrecognized_file: blue
 recognized_file:   white
 executable_file:   green
-dir:               yellow
+dir:               orange
 
 # Link
 dead_link: red
@@ -39,8 +39,8 @@ normal: darkkhaki
 inode: moccasin
 
 # Git
-addition:     chartreuse
-modification: darkkhaki
-deletion:     darkred
-untracked:    darkorange
-unchanged:    forestgreen
+addition:     cyan
+modification: yellow
+deletion:     red
+untracked:    blue
+unchanged:    green

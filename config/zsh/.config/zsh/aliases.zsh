@@ -86,3 +86,20 @@ command -v lsd > /dev/null && alias ls='lsd --group-dirs first' && \
 	alias tree='lsd --tree'
 command -v colorls > /dev/null && alias ls='colorls --sd --gs --color=always --indicator-style=none' && \
 	alias tree='colorls --tree'
+
+# nvim
+alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
+alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
+
+function nvims() {
+  items=("default" "LazyVim" "AstroNvim" "AlexvZyl")
+  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+  if [[ -z $config ]]; then
+    echo "Nothing selected"
+    return 0
+  elif [[ $config == "default" ]]; then
+    config=""
+  fi
+  NVIM_APPNAME=$config nvim $@
+}
+

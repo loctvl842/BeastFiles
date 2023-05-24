@@ -15,9 +15,6 @@ export PATH=$HOME/.fnm:$PATH
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-# java
-export JAVA_HOME=/usr/lib/jvm/default
-export PATH=$PATH:$JAVA_HOME/bin
 
 export GOPATH=$HOME/.local/share/go
 # export PATH="$PATH:./node_modules/.bin"
@@ -29,6 +26,8 @@ eval "`pip completion --zsh`"
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
 export LC_ALL=en_US.UTF-8
+export LS_COLORS="ow=01;36;40:${LS_COLORS}"
+export CLICOLOR_FORCE=true
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
