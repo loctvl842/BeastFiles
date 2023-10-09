@@ -1,13 +1,13 @@
 [user]
-	email = loclepnvx@gmail.com
-	name = loctvl842
+  email = loclepnvx@gmail.com
+  name = loctvl842
 [commit]
-	template = /home/loc/.gitmessage
+  template = /home/loc/.gitmessage
 [github]
-	user = loctvl842
+  user = loctvl842
 [credential "https://github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
+  helper = 
+  helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
+  helper = 
+  helper = !/usr/bin/gh auth git-credential
