@@ -33,11 +33,6 @@ copyq &
 # brightness
 brillo -S 70
 
-# Audio
-pipewire &
-pipewire-pulse &
-pipewire-media-session &
-
 # ===================== TRAY SYSTEM ===================
 
 ibus-daemon &

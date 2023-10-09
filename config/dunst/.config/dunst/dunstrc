@@ -1,4 +1,3 @@
-dunstify loc
 [global]
     monitor = 0
     origin = top-right

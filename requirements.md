@@ -1,0 +1,154 @@
+## X server
+
+```sh
+sudo pacman -S xorg
+```
+
+## Git
+```sh
+sudo pacman -S git github-cli
+```
+
+## Shell (Zsh)
+
+**1. Installation:**
+```sh
+sudo pacman -S zsh
+```
+
+**2. Make `zsh` as default shell:**
+```sh
+chsh -s /bin/zsh
+```
+
+**3. Install `zsh` plugin manager:**
+```sh
+zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
+```
+
+**4. Config:**
+```sh
+cd ~/BeastFiles/config/
+stow zsh -t ~
+```
+
+## Window manager
+
+**1. Installation:**
+```sh
+sudo pacman -S bspwm sxhkd
+```
+
+**2. Config:**
+```sh
+cd ~/BeastFiles/config/
+stow bspwm -t ~
+stow sxhkd -t ~
+```
+
+## Languages
+
+**1. Generate Locales:**
+
+Edit file `/etc/locale.gen`
+```sh
+en_US.UTF-8 UTF-8
+vi_VN.UTF-8 UTF-8
+```
+
+Generate Locales
+```sh
+sudo locale-gen
+```
+
+**2. Set the System Locale:**
+
+Edit file `/etc/locale.conf`
+```conf
+LANG=en_US.UTF-8
+```
+
+**3. Set User-Specific Locale:**
+
+Edit file `~/.config/locale.conf`
+```conf
+LANG=vi_VN.UTF-8
+```
+
+**Install `ibus`:**
+```sh
+sudo pacman -S ibus
+```
+
+**Install `ibus-bamboo`:**
+```sh
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/BambooEngine/ibus-bamboo/master/archlinux/install.sh)"
+```
+
+## Sound
+
+**1. Installation:**
+```sh
+sudo pacman -S pulseaudio pavucontrol
+```
+
+**2. Commands:**
+- Volumne up:
+```sh
+pactl set-sink-volume @DEFAULT_SINK@ +1%
+```
+- Volumne down:
+```sh
+pactl set-sink-volume @DEFAULT_SINK@ -1%
+```
+- Toggle mute:
+```sh
+pactl set-sink-mute @DEFAULT_SINK@ toggle
+```
+
+## Brightness
+
+**1. Install `brillo`:**
+```sh
+yay -S brillo
+```
+
+**2. Add permission to all users to run `brillo`:
+
+Add and edit file `/etc/udev/rules.d/backlight-permissions.rules`:
+```bash
+SUBSYSTEM=="backlight", ACTION=="add", \
+RUN+="/bin/chmod 0666 /sys/class/backlight/amdgpu_bl2/brightness", \
+RUN+="/bin/chown :video /sys/class/backlight/amdgpu_bl2/brightness"
+```
+
+Reload the rule to apply changes:
+```sh
+sudo udevadm control --reload-rules
+```
+
+Check `video` Group Membership:
+```sh
+groups
+```
+
+If `video` is not listed, add user to `video` group using `usermod`:
+```sh
+sudo usermod -aG video your_username
+```
+
+**Reboot needed**
+
+## Notification
+
+**1. Install `dunst`:**
+```sh
+sudo pacman -S dunst
+```
+
+**2. Config dunst**:
+```sh
+cd ~/BeastFiles/config
+stow dunst -t ~
+```
+
