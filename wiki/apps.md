@@ -23,27 +23,9 @@ sudo pacman -S dbeaver
 sudo pacman -S gpick
 ```
 
-## colorls
+## Thunar
 
-**[Source](https://github.com/athityakumar/colorls#installation)**
-**1. Install Ruby**
-**2. Install `colorls`:**
+**Installation**
 ```sh
-gem install colorls
-```
-**3. Config**
-```sh
-stow colorls -t ~
-```
-
-## Rofi
-
-**1. Installation:**
-```sh
-sudo pacman -S rofi
-```
-
-**2. Config:**
-```sh
-stow rofi -t ~
+sudo pacman -S thunar
 ```

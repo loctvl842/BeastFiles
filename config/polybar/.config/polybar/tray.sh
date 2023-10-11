@@ -1,4 +1,4 @@
-declare a cmds=('cbatticon -u 1 -i standard -l 20 -o "brillo -S 20"' 'nm-applet' 'blueman-applet' 'pa-applet' 'mictray')
+declare a cmds=('mictray' 'cbatticon -u 1 -i standard -l 20 -o "brillo -S 20"' 'nm-applet' 'blueman-applet')
 
 
 for (( i = 0; i < ${#cmds[@]} ; i++ )); do
@@ -6,7 +6,7 @@ for (( i = 0; i < ${#cmds[@]} ; i++ )); do
   eval "killall $process"
 done
 
-interval=0.75
+interval=1
 
 sleep $interval
 for (( i = 0; i < ${#cmds[@]} ; i++ )); do

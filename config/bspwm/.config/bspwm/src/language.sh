@@ -2,6 +2,8 @@ EN_ibus="BambooUs::Candy"
 VN_ibus="Bamboo::Candy"
 lang=`ibus engine`
 
+ibus-daemon
+
 if [ $lang = $EN_ibus ]
 then
   ibus engine $VN_ibus

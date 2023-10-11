@@ -21,9 +21,6 @@ sleep 0.1
 # conky
 ~/.config/conky/run.sh
 
-# Compositor
-picom --experimental-backends -b
-
 # Hide mouse when typing
 xbanish &
 
@@ -34,7 +31,5 @@ copyq &
 brillo -S 70
 
 # ===================== TRAY SYSTEM ===================
-
-ibus-daemon &
 
 ulauncher --hide-window &
