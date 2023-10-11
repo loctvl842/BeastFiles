@@ -9,6 +9,22 @@ sudo pacman -S xorg
 sudo pacman -S git github-cli
 ```
 
+## wget
+```sh
+sudo pacman -S wget
+```
+
+## yay
+```sh
+sudo pacman -Syu
+sudo pacman -S base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+```
+
+Remove `yay` folder cloned after finish installation.
+
 ## Shell (Zsh)
 
 **1. Installation:**

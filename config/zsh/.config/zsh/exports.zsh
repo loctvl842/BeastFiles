@@ -17,10 +17,6 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export GOPATH=$HOME/.local/share/go
-# export PATH="$PATH:./node_modules/.bin"
-eval "$(fnm env)"
-eval "$(zoxide init zsh)"
-eval "`pip completion --zsh`"
 
 ########## colorls ##################
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
