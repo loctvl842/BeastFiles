@@ -59,32 +59,44 @@ magenta_bg="%{$bg[magenta]%}"
 black_bg="%{$bg[black]%}"
 white_bg="%{$bg[white]%}"
 
-float_fg="%F{008}%f"
-float_bg="%K{008}%f"
+BLACK_CODE="000"
+RED_CODE="202"
+GREEN_CODE="002"
+YELLOW_CODE="003"
+BLUE_CODE="004"
+MAGENTA_CODE="005"
+CYAN_CODE="006"
+WHITE_CODE="007"
+GRAY_CODE="240"
 
 # Define text elements
-left_wrap=" "
-right_wrap=" "
+left_symbol=""
+right_symbol=""
 username="%n"
 custom_symbol="   "
 hostname="%m"
 working_directory="%c"
 
-success="${green_text}   "
+success="${green_text}   "
 error="${red_text}   "
-conditional_content="%(?:${success}:${error})"
+PROMPT_STATUS="%(?:${success}:${error})"
 
 # Assemble the prompt
-machine="${left_wrap}${yellow_text}${username}${red_text}${custom_symbol}${yellow_text}${hostname}${blue_text}${right_wrap}"
-PROMPT="${bold_text}${blue_text}${machine}${conditional_content}${cyan_text}${working_directory}${reset_color}"
+MACHINE_LEFT_SEP="%F{$YELLOW_CODE}${left_symbol}%f"
+MACHINE_RIGHT_SEP="%F{$YELLOW_CODE}${right_symbol}%f"
+MACHINE_SYMBOL="%F{$RED_CODE}${custom_symbol}%f"
+MACHINE="${bold_text}${MACHINE_LEFT_SEP}%K{$YELLOW_CODE}${black_text}${username}${MACHINE_SYMBOL}${black_text}${hostname}%k${MACHINE_RIGHT_SEP}"
+PROMPT_WORKING_DIR=" ${cyan_text}${working_directory}"
+PROMPT="${MACHINE}${PROMPT_WORKING_DIR}${reset_color}"
 
 # PROMPT="%B%{$fg[blue]%}   %{$fg[white]%}%n%{$fg[red]%}   %{$fg[white]%}%m%{$fg[blue]%}  %(?:%{$fg_bold[green]%}   :%{$fg_bold[red]%}   )%{$fg[cyan]%}%c%{$reset_color%}"
 
-PROMPT+="\$vcs_info_msg_0_ "
+PROMPT+="\$vcs_info_msg_0_"
+PROMPT+="${PROMPT_STATUS}"
 
 # Get virtual environment name of python
 
-RPROMPT_LEFT_SEP="%F{003}█%f"
-RPROMPT_RIGHT_SEP="%F{003}█%f"
-RPROMPT_CONTENT='%K{003}${black_text}${bold_text}${CONDA_ENV}%k'
+RPROMPT_LEFT_SEP="%F{$YELLOW_CODE}█%f"
+RPROMPT_RIGHT_SEP="%F{$YELLOW_CODE}█%f"
+RPROMPT_CONTENT='%K{$YELLOW_CODE}${black_text}${bold_text}${CONDA_ENV}%k'
 RPROMPT="${RPROMPT_LEFT_SEP}${RPROMPT_CONTENT}${RPROMPT_RIGHT_SEP}"
