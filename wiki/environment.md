@@ -102,3 +102,8 @@ Generate the requirements.txt file for the specific environment:
 conda list --export -n myenv > requirements.txt
 ```
 
+## Ruby
+
+```sh
+sudo pacman -S ruby
+```
