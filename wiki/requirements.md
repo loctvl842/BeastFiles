@@ -1,7 +1,7 @@
 ## X server
 
 ```sh
-sudo pacman -S xorg
+sudo pacman -S xorg xorg-server xorg-xinit
 ```
 
 ## Git
