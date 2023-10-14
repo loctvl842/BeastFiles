@@ -29,3 +29,16 @@ sudo pacman -S neofetch
 cd ~/BeastFiles/config/
 stow neofetch -t ~
 ```
+
+## ranger
+
+**Install**
+```sh
+sudo pacman -S ranger
+```
+
+**Config**
+```sh
+cd ~/BeastFiles/config
+stow ranger -t ~
+```
