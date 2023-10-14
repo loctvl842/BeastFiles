@@ -48,6 +48,16 @@ rm -rf ~/miniconda3/miniconda.sh
 ```
 > **Source:** https://docs.conda.io/projects/miniconda/en/latest/
 
+If you do not like the environment's name shown in shell, do this:
+```sh
+conda config --set changeps1 false
+```
+
+Or edit file `.condarc` with this content:
+```.condarc
+changeps1: false
+```
+
 ###Conda Usage:
 **1. Update Conda:**
 ```sh
