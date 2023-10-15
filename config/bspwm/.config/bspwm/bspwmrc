@@ -101,6 +101,7 @@ bspc rule -a Deno state=tiled
 bspc rule -a Ulauncher border=off state=floating
 bspc rule -a Protonvpn border=on state=floating center=on
 bspc rule -a photoshop.exe border=on state=floating
+bspc rule -a Postman state=floating
 
 # bspc rule -a \* rectangle 800x600+0+0 center=true
 

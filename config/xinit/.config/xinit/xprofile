@@ -31,15 +31,20 @@ copyq &
 # brightness
 brillo -S 70
 
-# ===================== TRAY SYSTEM ===================
-
-ulauncher --hide-window &
-
 # =============== IBUS AUTO start ===============
 found_ibus_daemon=$(pgrep -x ibus-daemon > /dev/null && echo "Process found" || echo "Process not found")
 if [[ $found_ibus_daemon == "Process not found" ]]; then
   ibus-daemon -drx &
+  sleep 0.5
   echo 'ibus-daemon not found, starting in the background'
 else
   echo 'ibus-daemon found'
 fi
+
+# ===================== TRAY SYSTEM ===================
+
+ulauncher --hide-window &
+
+# ===================== Screen Saver ==================
+
+xscreensaver --no-splash &

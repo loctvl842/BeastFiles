@@ -58,3 +58,20 @@ Move theme to `~/.themes` and `~/.icons`
 ```sh
 sudo pacman -S lxappearance
 ```
+
+## xscreensaver
+
+**Installation:**
+```sh
+sudo pacman -S xscreensaver
+```
+
+Load this content in `xinit`:
+```sh
+xscreensaver --no-splash &
+```
+
+Then run command:
+```sh
+xscreensaver-command -lock
+```

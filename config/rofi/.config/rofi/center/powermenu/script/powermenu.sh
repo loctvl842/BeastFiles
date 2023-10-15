@@ -68,7 +68,7 @@ case $chosen in
     if [[ -f /usr/bin/i3lock ]]; then
       i3lock-fancy-rapid 5 3
     else
-      xsecurelock
+      xscreensaver-command -lock
     fi
     ;;
 
