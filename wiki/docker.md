@@ -4,6 +4,16 @@
 sudo pacman -S docker docker-compose
 ```
 
+Start/Enable docker
+```sh
+sudo systemctl start/enable docker.service
+```
+
+Add current User to the Docker Group
+```sh
+sudo usermod -aG docker $USER
+```
+
 # Docker Commands, Help & Tips
 
 ### Attach to a Running Container:

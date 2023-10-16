@@ -47,7 +47,6 @@ fi
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x picom > /dev/null || picom &
-pgrep -x ibus-daemon > /dev/null || ibus-daemon &
 
 bspc config border_width         1
 bspc config window_gap           10

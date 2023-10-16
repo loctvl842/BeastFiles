@@ -39,12 +39,4 @@ ulauncher --hide-window &
 
 xscreensaver --no-splash &
 
-# =============== IBUS AUTO start ===============
-found_ibus_daemon=$(pgrep -x ibus-daemon > /dev/null && echo "Process found" || echo "Process not found")
-if [[ $found_ibus_daemon == "Process not found" ]]; then
-  ibus-daemon -drx &
-  echo 'ibus-daemon not found, starting in the background'
-else
-  echo 'ibus-daemon found'
-fi
-
+ibus-daemon -drxR &
