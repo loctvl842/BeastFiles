@@ -68,3 +68,18 @@ Gitmoji is an initiative to standardize and explain the use of emojis on GitHub 
 ```sh
 npm i -g gitmoji-cli
 ```
+
+## flameshot
+
+This is a screenshot utility.
+
+**Install:**
+```sh
+sudo pacman -S flameshot
+```
+
+**Config:**
+```sh
+cd ~/BeastFiles/config
+stow flameshot -t ~
+```
