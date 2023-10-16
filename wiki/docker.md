@@ -29,6 +29,10 @@ docker exec -it container_name_or_id /bin/bash
 docker network create --driver bridge network_name
 ```
 
+### External networks
+
+Use field `external: true` for external networks. (Use when we want to connect Docker containers to a network that is created and managed outside of Docker stack, such as a network managed by the host system or a network created by a different Docker Compose project.)
+
 ### Connect a container to a network
 
 ```sh
