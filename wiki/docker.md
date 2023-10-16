@@ -45,3 +45,13 @@ Stop all containers
 ```sh
 docker stop $(docker ps -a -q)
 ```
+
+### Clean up Docker resources (unused containers, networks, images, volumes)
+
+- `-a`: This flag removes all unused resources, not just dangling ones. It effectively prunes all containers, networks, images, and volumes that are not currently in use by any running or stopped container. Without this flag, docker system prune would remove only dangling resources (those not associated with any container).
+
+- `-f`: This flag is used to force the removal of resources without confirmation. When you use the -f flag, Docker will immediately proceed with the pruning operation without asking for user confirmation. Without this flag, Docker will prompt you to confirm the removal of resources.
+
+```sh
+docker system prune -af
+```
