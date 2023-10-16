@@ -60,3 +60,11 @@ rm -rf ~/dragon
 ```sh
 yay -S ueberzug
 ```
+
+## gitmoji
+Gitmoji is an initiative to standardize and explain the use of emojis on GitHub commit messages.
+
+**Install:**
+```sh
+npm i -g gitmoji-cli
+```
