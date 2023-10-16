@@ -2,7 +2,7 @@
   email = loclepnvx@gmail.com
   name = loctvl842
 [commit]
-  template = /home/loc/.gitmessage
+  template = ~/.gitmessage
 [github]
   user = loctvl842
 [credential "https://github.com"]
