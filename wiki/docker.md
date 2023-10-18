@@ -59,3 +59,21 @@ docker stop $(docker ps -a -q)
 ```sh
 docker system prune -af
 ```
+
+## Docker compose facts
+
+**1. Docker Compose: Environment Variable Override with `env_file` and `environment`**
+
+In Docker Compose, when using both `env_file` and `environment` sections for a service:
+
+- The `environment` section **overrides** environment variables defined in the `env_file` for the **same service**.
+
+Example:
+
+```yaml
+env_file: .env
+environment:
+  - POSTGRES_HOST=database
+```
+
+The value for **POSTGRES_HOST** will be "database" as specified in the environment section, and any other environment variables defined in the **.env** file will remain unchanged unless overridden in the environment section.
