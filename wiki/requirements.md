@@ -101,8 +101,35 @@ sudo pacman -S ibus
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/BambooEngine/ibus-bamboo/master/archlinux/install.sh)"
 ```
 
+**Edit file `/etc/profile` with this content:
+
+```sh
+export GTK_IM_MODULE=xim
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+# Dành cho những phần mềm dựa trên qt4
+export QT4_IM_MODULE=ibus
+# Dành cho những phần mềm dùng thư viện đồ họa clutter/OpenGL
+export CLUTTER_IM_MODULE=ibus
+export GLFW_IM_MODULE=ibus
+```
+
+Or just run this command:
+```sh
+sudo sh -c "echo  '\
+export GTK_IM_MODULE=ibus\
+export QT_IM_MODULE=ibus\
+export XMODIFIERS=@im=ibus\
+# Dành cho những phần mềm dựa trên qt4\
+export QT4_IM_MODULE=ibus\
+# Dành cho những phần mềm dùng thư viện đồ họa clutter/OpenGL\
+export CLUTTER_IM_MODULE=ibus\
+export GLFW_IM_MODULE=ibus\
+' >> /etc/profile"
+```
+
 **NOTE:**
-- `ibus-bamboo`: choose "chế độ gõ mặc định", then choose `ForwardKeyEvnetII`
+- `ibus-bamboo`: choose "chế độ gõ mặc định", then choose `XTestFakeKeyEvent`
 
 ## Sound
 
@@ -132,7 +159,7 @@ pactl set-sink-mute @DEFAULT_SINK@ toggle
 yay -S brillo
 ```
 
-**2. Add permission to all users to run `brillo`:
+**2. Add permission to all users to run `brillo`:**
 
 Add and edit file `/etc/udev/rules.d/backlight-permissions.rules`:
 ```bash
@@ -141,7 +168,7 @@ RUN+="/bin/chmod 0666 /sys/class/backlight/amdgpu_bl2/brightness", \
 RUN+="/bin/chown :video /sys/class/backlight/amdgpu_bl2/brightness"
 ```
 
-Reload the rule to apply changes:
+> Reload the rule to apply changes:
 ```sh
 sudo udevadm control --reload-rules
 ```

@@ -46,21 +46,32 @@ stow -t ~ *
 ## 🤟Fonts
 
 **Emoji**
+
 - [NotoColorEmoji](https://github.com/googlefonts/noto-emoji) (`ctrl + shift + u` in kitty terminal)
 
 **Icon**
+
 - [material-design-iconic-font](https://github.com/zavoloklom/material-design-iconic-font/releases/download/2.2.0/material-design-iconic-font.zip)
 - [codicon](https://github.com/microsoft/vscode-codicons/raw/main/dist/codicon.ttf)
 
 **Text**
+
 - [Cascadia Code](https://github.com/microsoft/cascadia-code/releases)
 - [Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
+
 > Install Mono will get small icons
+
 - [Fira Code](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode)
 - [San Francisco Pro](https://drive.google.com/file/d/1-vLGyDO-q7ciBclaPWY5ObLoPYfyh1q8/view)
 - [Noto](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.1/Noto.zip)
 
 Copy new fonts in `$HOME/.local/share/fonts/`, then run:
+
 ```sh
 fc-cache -fv
 ```
+
+| name                  | description |
+| --------------------- | ----------- |
+| alacritty             | Terminal    |
+| alacritty-colorscheme | Terminal    |
