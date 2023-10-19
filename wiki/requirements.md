@@ -129,7 +129,9 @@ export GLFW_IM_MODULE=ibus\
 ```
 
 **NOTE:**
-- `ibus-bamboo`: choose "chế độ gõ mặc định", then choose `XTestFakeKeyEvent`
+- `ibus-bamboo`: 
+    - choose "chế độ gõ mặc định", then choose `XTestFakeKeyEvent`
+    - choose "kiểu gõ", then choose `Telex2`
 
 ## Sound
 
