@@ -84,11 +84,8 @@ alias ld='ls -d'
 command -v colorls > /dev/null && alias ls='colorls --sd --gs --color=always --indicator-style=none' && \
 	alias tree='colorls --tree'
 
-# nvim
-alias nvim-astro="NVIM_APPNAME=NvChad nvim"
-
 function nvims() {
-  items=("default" "NvChad")
+  items=("default" "NvChad" "LazyVim")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config: " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"
