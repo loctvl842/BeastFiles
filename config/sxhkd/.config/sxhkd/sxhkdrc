@@ -9,18 +9,17 @@ super + Return
 #################################################################################
 # ------------- App launcher -------------------------------
 super + shift + d
-	~/.config/rofi/center/launcher/script/launcher.sh
+	$HOME/.config/rofi/center/launcher/script/launcher.sh
 super + d
   ulauncher-toggle
-  # ~/.config/bspwm/src/ulauncher.sh
 
 # ------------- Poweer menu --------------------------------
 super + {_, shift}+ p
-	~/.config/rofi/{center,dropdown}/powermenu/script/powermenu.sh
+	$HOME/.config/rofi/{center,dropdown}/powermenu/script/powermenu.sh
 
 # ------------- Custom Polybar/Neovim/Alacritty  -----------
 super + {_, shift} + c
-	~/.config/rofi/{center,dropdown}/custom/script/custom.sh
+	$HOME/.config/rofi/{center,dropdown}/custom/script/custom.sh
 
 #################################################################################
 ##################                RELOAD                #########################
@@ -32,25 +31,25 @@ super + shift + r
 ##################                VOLUME                #########################
 #################################################################################
 {XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute}
-  ~/.config/dunst/volume.sh {up,down,mute}
+  $HOME/bin/adjust_volume.sh {up,down,mute}
 
 super + {period,comma,shift + m}
-  ~/.config/dunst/volume.sh {up,down,mute}
+  $HOME/bin/adjust_volume.sh {up,down,mute}
 
 #################################################################################
 ##################              BRIGHTNESS              #########################
 #################################################################################
 {XF86MonBrightnessUp, XF86MonBrightnessDown}
-  ~/.config/dunst/brightness.sh {up,down}
+  $HOME/bin/adjust_brightness.sh {up,down}
 
 super + {equal,minus}
-  ~/.config/dunst/brightness.sh {up,down}
+  $HOME/bin/adjust_brightness.sh {up,down}
 
 #################################################################################
 ##################            TOGGLE POLYBAR            #########################
 #################################################################################
 super + b
-  ~/.config/bspwm/src/toggle_polybar.sh
+  $HOME/bin/toggle_polybar.sh
 
 #################################################################################
 ##################           CLOSE/KILL WINDOW          #########################
@@ -65,7 +64,7 @@ super + q
 ##################          TILED OR MONOCLE            #########################
 #################################################################################
 super + m
-	~/.config/bspwm/src/bspc_monocle.sh
+	$HOME/bin/bspc_monocle.sh
 
 #################################################################################
 ##################       SWAP CURRENT/BIGGEST NODE      #########################
@@ -86,26 +85,25 @@ super + {shift + t, f}
 	bspc node -t {pseudo_tiled,floating}
 
 super + space
-  $HOME/.config/bspwm/src/bspc_fullscreen.sh
+  $HOME/bin/bspc_fullscreen.sh
 
 super + t
-  $HOME/.config/bspwm/src/bspc_tiled.sh
+  $HOME/bin/bspc_tiled.sh
   
 #################################################################################
 ##################            TOGGLE LANGUAGE           #########################
 #################################################################################
 super + bracketleft
-  ~/.config/bspwm/src/language.sh
+  $HOME/bin/toggle_en_vi.sh
 
-    
 #################################################################################
-##################           BATTERY 					###################################
+##################         TOGGLE SYSTEM         ################################
 #################################################################################
 super + F10
-  ~/.config/bspwm/src/toggle_touchpad.sh
+  $HOME/bin/toggle_touchpad.sh
 
 super + F11
-  ~/.config/bspwm/src/toggle_keyboard.sh
+  $HOME/bin/toggle_keyboard.sh
 
 #################################################################################
 ##################  VIEW ALL WINDOWS IN CURRENT WORKSPACE #######################
@@ -117,7 +115,7 @@ super + Escape
 ##################            TOGGLE CAPLOCK            #########################
 #################################################################################
 shift + Escape
-    ~/.config/bspwm/src/caplock.sh
+  $HOME/bin/toggle_caplock.sh
 
 #################################################################################
 ##################           FOCUS NODE GIVEN           #########################
@@ -176,14 +174,14 @@ super + ctrl + space
 #################################################################################
 ##################        RESIZE WINDOW                 #########################
 #################################################################################
-ctrl + shift + h
-	~/.config/bspwm/src/resize/shrinkx.sh
-ctrl + shift + j
-	~/.config/bspwm/src/resize/expandy.sh
-ctrl + shift + k
-	~/.config/bspwm/src/resize/shrinky.sh
-ctrl + shift + l
-	~/.config/bspwm/src/resize/expandx.sh
+ctrl + alt + h
+  ~/bin/bspc_resize_x_shrink.sh
+ctrl + alt + j
+	~/bin/bspc_resize_y_expand.sh
+ctrl + alt + k
+	~/bin/bspc_resize_y_shrink.sh
+ctrl + alt + l
+  ~/bin/bspc_resize_x_expand.sh
 
 #################################################################################
 ##################        MOVE FLOATING WINDOW          #########################
@@ -195,7 +193,7 @@ alt + {h,j,k,l}
 ##################          RANDOM WALLPAPER            #########################
 #################################################################################
 super + r
-	~/.config/bspwm/src/random_wallpaper.sh
+  $HOME/bin/random_wallpaper.sh
 
 #################################################################################
 ##################          MOVE AROUND WINDOW          #########################
@@ -210,27 +208,9 @@ super + s
 super + alt + {h,c,r}
 	bspc rule -a kitty -o state=floating rectangle=800x500+1020+100 sticky=on && kitty -e {htop,cava,ranger}
 
-# super + alt + a
-# 	bspc rule -a kitty -o state=floating rectangle=800x500+1020+100 sticky=on && kitty -e neofetch
-
 # send the newest marked node to the newest preselected node
 super + y
 	bspc node newest.marked.local -n newest.!automatic.local
-
-#################################################################################
-##################           ENTERTAINMENT              #########################
-#################################################################################
-super + alt + m
-	bspc rule -a Brave-browser -o state=floating rectangle=450x800+1400+50 && brave && xdg-open 'https://www.messenger.com/t/100010491703284'
-
-super + alt + y
-	bspc rule -a Brave-browser -o state=floating rectangle=1296x729+20+250 && brave && xdg-open 'https://www.youtube.com/'
-
-#################################################################################
-##################           BATTERY 					###################################
-#################################################################################
-super + shift + b
-	~/.config/bspwm/src/battery_cap.sh
 
 # set the node flags
 super + ctrl + {m,x,z}

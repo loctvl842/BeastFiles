@@ -7,7 +7,7 @@
 dunst &
 
 # faster keyboard
-setxkbmap -option caps:escape
+# setxkbmap -option caps:escape
 
 # xset r rate 210 40
 xset r rate 240 60
