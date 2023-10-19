@@ -104,7 +104,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/BambooEngine/ibus-bamboo
 **Edit file `/etc/profile` with this content:
 
 ```sh
-export GTK_IM_MODULE=xim
+export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 # Dành cho những phần mềm dựa trên qt4
@@ -116,7 +116,7 @@ export GLFW_IM_MODULE=ibus
 
 Or just run this command:
 ```sh
-sudo sh -c "echo  '\
+sudo sh -c "echo  '\                                            
 export GTK_IM_MODULE=ibus\
 export QT_IM_MODULE=ibus\
 export XMODIFIERS=@im=ibus\
