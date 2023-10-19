@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 # `brillo` does the same thing to `light`
 # but `brillo` decrease the percentage of brightness exactly linear

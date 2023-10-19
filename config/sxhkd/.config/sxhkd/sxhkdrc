@@ -31,25 +31,25 @@ super + shift + r
 ##################                VOLUME                #########################
 #################################################################################
 {XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute}
-  $HOME/bin/adjust_volume.sh {up,down,mute}
+  $HOME/.local/bin/_adjust_volume.sh {up,down,mute}
 
 super + {period,comma,shift + m}
-  $HOME/bin/adjust_volume.sh {up,down,mute}
+  $HOME/.local/bin/_adjust_volume.sh {up,down,mute}
 
 #################################################################################
 ##################              BRIGHTNESS              #########################
 #################################################################################
 {XF86MonBrightnessUp, XF86MonBrightnessDown}
-  $HOME/bin/adjust_brightness.sh {up,down}
+  $HOME/.local/bin/_adjust_brightness.sh {up,down}
 
 super + {equal,minus}
-  $HOME/bin/adjust_brightness.sh {up,down}
+  $HOME/.local/bin/_adjust_brightness.sh {up,down}
 
 #################################################################################
 ##################            TOGGLE POLYBAR            #########################
 #################################################################################
 super + b
-  $HOME/bin/toggle_polybar.sh
+  $HOME/.local/bin/_toggle_polybar.sh
 
 #################################################################################
 ##################           CLOSE/KILL WINDOW          #########################
@@ -64,7 +64,7 @@ super + q
 ##################          TILED OR MONOCLE            #########################
 #################################################################################
 super + m
-	$HOME/bin/bspc_monocle.sh
+  $HOME/.local/bin/_bspc_monocle.sh
 
 #################################################################################
 ##################       SWAP CURRENT/BIGGEST NODE      #########################
@@ -85,25 +85,25 @@ super + {shift + t, f}
 	bspc node -t {pseudo_tiled,floating}
 
 super + space
-  $HOME/bin/bspc_fullscreen.sh
+  $HOME/.local/bin/_bspc_fullscreen.sh
 
 super + t
-  $HOME/bin/bspc_tiled.sh
-  
+  $HOME/.local/bin/_bspc_tiled.sh
+
 #################################################################################
 ##################            TOGGLE LANGUAGE           #########################
 #################################################################################
 super + bracketleft
-  $HOME/bin/toggle_en_vi.sh
+  $HOME/.local/bin/_toggle_en_vi.sh
 
 #################################################################################
 ##################         TOGGLE SYSTEM         ################################
 #################################################################################
 super + F10
-  $HOME/bin/toggle_touchpad.sh
+  $HOME/.local/bin/_toggle_touchpad.sh
 
 super + F11
-  $HOME/bin/toggle_keyboard.sh
+  $HOME/.local/bin/_toggle_keyboard.sh
 
 #################################################################################
 ##################  VIEW ALL WINDOWS IN CURRENT WORKSPACE #######################
@@ -115,7 +115,7 @@ super + Escape
 ##################            TOGGLE CAPLOCK            #########################
 #################################################################################
 shift + Escape
-  $HOME/bin/toggle_caplock.sh
+  $HOME/.local/bin/_toggle_caplock.sh
 
 #################################################################################
 ##################           FOCUS NODE GIVEN           #########################
@@ -175,13 +175,13 @@ super + ctrl + space
 ##################        RESIZE WINDOW                 #########################
 #################################################################################
 ctrl + alt + h
-  ~/bin/bspc_resize_x_shrink.sh
+  $HOME/.local/bin/_bspc_resize_x_shrink.sh
 ctrl + alt + j
-	~/bin/bspc_resize_y_expand.sh
+	$HOME/.local/bin/_bspc_resize_y_expand.sh
 ctrl + alt + k
-	~/bin/bspc_resize_y_shrink.sh
+	$HOME/.local/bin/_bspc_resize_y_shrink.sh
 ctrl + alt + l
-  ~/bin/bspc_resize_x_expand.sh
+  $HOME/.local/bin/_bspc_resize_x_expand.sh
 
 #################################################################################
 ##################        MOVE FLOATING WINDOW          #########################
@@ -193,7 +193,7 @@ alt + {h,j,k,l}
 ##################          RANDOM WALLPAPER            #########################
 #################################################################################
 super + r
-  $HOME/bin/random_wallpaper.sh
+  $HOME/.local/bin/_random_wallpaper.sh
 
 #################################################################################
 ##################          MOVE AROUND WINDOW          #########################
