@@ -101,6 +101,9 @@ sudo pacman -S ibus
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/BambooEngine/ibus-bamboo/master/archlinux/install.sh)"
 ```
 
+**NOTE:**
+- `ibus-bamboo`: choose "chế độ gõ mặc định", then choose `ForwardKeyEvnetII`
+
 ## Sound
 
 **1. Installation:**

@@ -45,3 +45,12 @@ sudo pacman-key --lsign-key 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo pacman -Sy
 sudo pacman -S pritunl-client-electron
 ```
+
+## MPV
+
+A Media player
+
+**Installation**
+```sh
+sudo pacman -S mpv
+```
