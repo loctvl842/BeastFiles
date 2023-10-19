@@ -54,3 +54,11 @@ A Media player
 ```sh
 sudo pacman -S mpv
 ```
+
+## LibreOffice
+
+Install stable maintenance branch with relatively rare updates, for conservative users.
+
+```sh
+sudo pacman -S libreoffice-still
+```
