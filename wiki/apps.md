@@ -30,6 +30,14 @@ sudo pacman -S gpick
 sudo pacman -S thunar
 ```
 
+**Plugins:**
+
+- `thunar-archive-plugin`
+
+```sh
+sudo pacman -S xarchiver unzip thunar-archive-plugin
+```
+
 ## Pritunl
 
 Follow [here](https://client.pritunl.com/#install)
