@@ -126,6 +126,12 @@ To actually change the background image, update the background in the theme file
 sudo systemctl enable lightdm
 ```
 
+**Change user's display name:**
+
+```sh
+sudo chfn -f 'ON NO' <username>
+```
+
 **Troubleshooting:**
 
 1. **Can't login after setup lightdm:**
