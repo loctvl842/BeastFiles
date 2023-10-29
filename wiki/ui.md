@@ -87,13 +87,43 @@ sudo pacman -S lightdm lightdm-webkit2-greeter
 
 Download theme:
 ```sh
-sudo git clone https://github.com/Wattos/LightDM-Webkit-MacOSX-Theme /usr/share/lightdm-webkit/themes/mac/
+sudo git clone https://github.com/paysonwallach/aqua-lightdm-webkit-theme /usr/share/lightdm-webkit/themes/mac/
 ```
 
 Change theme by edit `webkit-theme` in file `/etc/lightdm/lightdm-webkit2-greeter.conf`
 
 ```conf
 webkit_theme        = mac
+```
+
+Change user's avatar by update `Icon` in file `/var/lib/AccountsService/users/<username>` (Crop a square avatar to put in `/var/lib/AccountsService/icons/`)
+
+```
+Session=bspwm
+XSession=bspwm
+Icon=/var/lib/AccountsService/icons/loc.jpg
+SystemAccount=false
+```
+
+Remeber to grants full read, write, and execute permissions to the owner of the file:
+```sh
+chmod 777 /var/lib/AccountsService/users/<username>/icons/<avatar>.jpg
+```
+
+Change the background by editing `/etc/lightdm/lightdm-webkit2-greeter.conf`
+
+```conf
+background_images = /usr/share/backgrounds/
+```
+
+Above command is to tell lightdm the directory where the background image is.
+
+To actually change the background image, update the background in the theme file. (In above theme, edit file `/usr/share/lightdm-webkit/themes/mac/resources/css/style.css`)
+
+**Enable lightdm**:
+
+```sh
+sudo systemctl enable lightdm
 ```
 
 **Troubleshooting:**

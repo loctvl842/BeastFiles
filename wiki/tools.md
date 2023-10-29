@@ -83,3 +83,9 @@ sudo pacman -S flameshot
 cd ~/BeastFiles/config
 stow flameshot -t ~
 ```
+
+## live-server
+
+```sh
+sudo npm install -g live-server
+```
