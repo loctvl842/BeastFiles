@@ -16,7 +16,7 @@ xset r rate 240 60
 
 # Random Photo Every Login
 # feh --bg-fill --randomize ~/Pictures/wallpaper/* &
-feh --bg-fill ~/Pictures/wallpaper/motor.jpg &
+feh --bg-fill ~/BeastFiles/wallpapers/static/yamaha_bike_motorcycle.jpg &
 sleep 0.1
 
 # conky
