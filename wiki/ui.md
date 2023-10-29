@@ -75,3 +75,29 @@ Then run command:
 ```sh
 xscreensaver-command -lock
 ```
+
+## LightDM
+
+**Installation:**
+```sh
+sudo pacman -S lightdm lightdm-webkit2-greeter
+```
+
+**Setup theme**:
+
+Download theme:
+```sh
+sudo git clone https://github.com/Wattos/LightDM-Webkit-MacOSX-Theme /usr/share/lightdm-webkit/themes/mac/
+```
+
+Change theme by edit `webkit-theme` in file `/etc/lightdm/lightdm-webkit2-greeter.conf`
+
+```conf
+webkit_theme        = mac
+```
+
+**Troubleshooting:**
+
+1. **Can't login after setup lightdm:**
+
+Edit `/etc/lightdm/lightdm.conf` to change the session from `default` to the name of what we are using (e.g. `bspwm`)
