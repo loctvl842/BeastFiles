@@ -1,13 +1,14 @@
-timeout:        00:30:00
-cycle:          0:05:00
-lock:           True
-lockTimeout:    0:00:00
-passwdTimeout:  0:00:10
-fade:           True
-unfade:         False
-fadeSeconds:    0:00:03
-fadeTicks:      20
-dpmsEnabled:    True
-dpmsStandby:    2:00:00
-dpmsSuspend:    2:00:00
-dpmsOff:        4:00:00
+timeout:                                      00:30:00
+cycle:                                        0:05:00
+lock:                                         True
+lockTimeout:                                  0:00:00
+passwdTimeout:                                0:00:10
+fade:                                         True
+unfade:                                       False
+fadeSeconds:                                  0:00:03
+fadeTicks:                                    20
+dpmsEnabled:                                  True
+dpmsStandby:                                  2:00:00
+dpmsSuspend:                                  2:00:00
+dpmsOff:                                      4:00:00
+xscreensaver-auth.default.*.newLoginCommand:  dm-tool switch-to-greeter

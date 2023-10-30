@@ -70,3 +70,10 @@ Install stable maintenance branch with relatively rare updates, for conservative
 ```sh
 sudo pacman -S libreoffice-still
 ```
+
+
+## Visual studio code
+
+```sh
+yay -S visual-studio-code-bin
+```
