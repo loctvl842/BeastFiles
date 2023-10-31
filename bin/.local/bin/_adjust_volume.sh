@@ -5,15 +5,15 @@ function send_notification() {
   level=0
   if [ $volume -gt 0 -a $volume -lt 33 ]
   then
-    dunstify -a "changevolume" -u low -r "9993" -h int:value:"$volume" -i "~/.config/dunst/icons/volume-woman.png" "Volume: ${volume}%" -t 2000
+    dunstify -a "changevolume" -u low -r "9993" -h int:value:"$volume" -i "~/.local/bin/dunst_icons/volume/volume-woman.png" "Volume: ${volume}%" -t 2000
   elif [ $volume -gt 33 -a $volume -lt 66 ]
   then
-    dunstify -a "changevolume" -u low -r "9993" -h int:value:"$volume" -i "~/.config/dunst/icons/volume-woman.png" "Volume: ${volume}%" -t 2000
+    dunstify -a "changevolume" -u low -r "9993" -h int:value:"$volume" -i "~/.local/bin/dunst_icons/volume/volume-woman.png" "Volume: ${volume}%" -t 2000
   elif [ $volume -gt 66 ]
   then
-    dunstify -a "changevolume" -u low -r "9993" -h int:value:"$volume" -i "~/.config/dunst/icons/volume-woman.png" "Volume: ${volume}%" -t 2000
+    dunstify -a "changevolume" -u low -r "9993" -h int:value:"$volume" -i "~/.local/bin/dunst_icons/volume/volume-woman.png" "Volume: ${volume}%" -t 2000
   else
-    dunstify -a "changevolume" -u low -r "9993" -h int:value:"$volume" -i "~/.config/dunst/icons/volume-woman.png" "Volume: ${volume}%" -t 2000
+    dunstify -a "changevolume" -u low -r "9993" -h int:value:"$volume" -i "~/.local/bin/dunst_icons/volume/volume-woman.png" "Volume: ${volume}%" -t 2000
   fi
 }
 
@@ -21,7 +21,7 @@ function notify() {
   command=$1
   echo $command
   volume=$(pactl list sinks | awk '$1=="Volume:" {gsub(/[%]/, "", $5); print $5}')
-  dunstify -a "changevolume" -u low -r "9993" -h int:value:"$volume" -i "~/.config/dunst/icons/volume-$command.png" "Volume: ${volume}%" -t 2000
+  dunstify -a "changevolume" -u low -r "9993" -h int:value:"$volume" -i "~/.local/bin/dunst_icons/volume/volume-$command.png" "Volume: ${volume}%" -t 2000
 }
 
 case $1 in
