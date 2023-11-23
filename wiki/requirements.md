@@ -264,3 +264,26 @@ fusermount -u ~/phone_mount
 ```
 
 These steps enable you to easily mount and unmount your Android phone, providing a convenient way to transfer files between your devices.
+
+Or you can use script `_dmtpfs.sh` from `BeastFiles` to mount and unmount your Android phone.
+
+```sh
+_dmtpfs.sh
+```
+
+**Troubleshoot**
+`simple-mtpfs` only allows to read files from the phone, not to write to it.
+
+Therefore, we can use `go-mtpfs`
+
+**Install**:
+
+```sh
+yay -S go-mtpfs-git
+```
+
+Then mount the device:
+
+```sh
+go-mtpfs ~/phone_mount &
+```
