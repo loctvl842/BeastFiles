@@ -200,3 +200,67 @@ cd ~/BeastFiles/config
 stow dunst -t ~
 ```
 
+## Android mounting
+
+To seamlessly transfer files between your Android phone and your computer running Arch Linux, follow these steps:
+
+
+**1. Connect the Phone to the Computer**
+
+Use a USB cable to connect your Android phone to your computer.
+
+**2. Install `simple-mtpfs`**
+
+```sh
+yay -S simple-mtpfs
+```
+
+This command installs simple-mtpfs, a tool that facilitates the mounting of Android devices.
+
+**3. List Devices**
+
+Run the following command to list connected devices:
+
+```sh
+simple-mtpfs -l
+```
+
+Sample output:
+
+```sh
+1: XiaomiMi-2s (id2) (MTP)
+```
+
+Take note of the device ID associated with your Android phone.
+
+**4. Create a Mount Point and Mount the Device**
+
+Navigate to your home directory and create a folder named `phone_mount`:
+
+```sh
+mkdir ~/phone_mount
+```
+
+Now, mount the Android device using the previously identified device ID:
+
+```sh
+simple-mtpfs --device 1 ~/phone_mount
+```
+
+Replace 1 with the correct device ID for your setup.
+
+**5. Unmount the Device**
+
+To unmount the Android device, ensure that fuse3 is installed:
+
+```sh
+sudo pacman -S fuse3
+```
+
+Then, execute the following command:
+
+```sh
+fusermount -u ~/phone_mount
+```
+
+These steps enable you to easily mount and unmount your Android phone, providing a convenient way to transfer files between your devices.
