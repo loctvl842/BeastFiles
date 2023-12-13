@@ -18,14 +18,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export GOPATH=$HOME/.local/share/go
 
-############ Ibus things ##############
-export GTK_IM_MODULE=ibus
-export QT_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT4_IM_MODULE=ibus
-export CLUTTER_IM_MODULE=ibus
-export GLFW_IM_MODULE=ibus
-
 ########## colorls ##################
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
@@ -33,34 +25,71 @@ export LC_ALL=en_US.UTF-8
 export LS_COLORS="ow=01;36;40:${LS_COLORS}"
 export CLICOLOR_FORCE=true
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/loc/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
+# Lazy load Conda
+conda() {
+  __conda_setup="$('/home/loc/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+  if [ $? -eq 0 ]; then
     eval "$__conda_setup"
-else
+  else
     if [ -f "/home/loc/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/loc/miniconda3/etc/profile.d/conda.sh"
+      . "/home/loc/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/loc/miniconda3/bin:$PATH"
+      export PATH="/home/loc/miniconda3/bin:$PATH"
     fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+  fi
+  unset __conda_setup
+    if command -v conda &> /dev/null; then
+        echo "Conda is already loaded."
+    else
+        __conda_setup="$('/home/loc/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+        if [ $? -eq 0 ]; then
+            eval "$__conda_setup"
+        else
+            if [ -f "/home/loc/miniconda3/etc/profile.d/conda.sh" ]; then
+                . "/home/loc/miniconda3/etc/profile.d/conda.sh"
+            else
+                export PATH="/home/loc/miniconda3/bin:$PATH"
+            fi
+        fi
+        unset __conda_setup
+    fi
+}
 
 ### java application
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-
 # pnpm
-export PNPM_HOME="/home/loc/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
+pnpm_lazy_load() {
+  echo 'pnpm is loading...'
+  if command -v pnpm &> /dev/null; then
+    export PNPM_HOME="/home/loc/.local/share/pnpm"
+    case ":$PATH:" in
+      *":$PNPM_HOME:"*) ;;
+      *) export PATH="$PNPM_HOME:$PATH" ;;
+    esac
+  else
+    echo "pnpm command not found. Make sure pnpm is installed and in your PATH."
+  fi
+}
+pnpm() {
+  pnpm_lazy_load
+  command pnpm "$@"
+}
 # pnpm end
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm_lazy_load() {
+  echo 'nvm is loading...'
+  if command -v nvm &> /dev/null; then
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+  else
+    echo "nvm command not found. Make sure nvm is installed and in your PATH."
+  fi
+}
+
+# Use a command that triggers nvm_lazy_load when needed
+nvm() {
+  nvm_lazy_load
+  command nvm "$@"
+}
