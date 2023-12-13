@@ -12,6 +12,15 @@ sudo pacman -S npm
 sudo npm install -g yarn
 ```
 
+**Install `nvm`:**
+
+```sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+```
+
+- Usage:
+
+
 ## Python
 
 **Install `python3`:**

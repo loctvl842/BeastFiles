@@ -38,3 +38,5 @@ ulauncher --hide-window &
 # ===================== Screen Saver ==================
 
 xscreensaver --no-splash &
+
+ibus-daemon -drx &

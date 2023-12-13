@@ -101,7 +101,7 @@ sudo pacman -S ibus
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/BambooEngine/ibus-bamboo/master/archlinux/install.sh)"
 ```
 
-**Edit file `/etc/profile` with this content:
+**Edit file `/etc/profile` with this content:**
 
 ```sh
 export GTK_IM_MODULE=ibus
@@ -126,6 +126,14 @@ export QT4_IM_MODULE=ibus\
 export CLUTTER_IM_MODULE=ibus\
 export GLFW_IM_MODULE=ibus\
 ' >> /etc/profile"
+```
+
+**Start ibus on login:**
+
+Add to `$HOME/.config/xinit/xprofile`:
+
+```xprofile
+ibus-daemon -drx &
 ```
 
 **NOTE:**
