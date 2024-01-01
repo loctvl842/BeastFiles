@@ -15,22 +15,24 @@ elif [[ $bar == "gnome-panel" ]]; then
   gnome-panel &
 fi
 
-screenlayout="kietem"
+screenlayout="external-top"
 
 if [[ $(xrandr -q | grep 'HDMI' | grep -oP 'HDMI-1 \K\w+') == "connected" ]]; then
   killall btops
   if [[ $screenlayout == 'left' ]]; then
     $HOME/.screenlayout/leftScreen.sh
-    bspc monitor eDP -d 2 3 4 5 6 7 8 9 10
-    bspc monitor HDMI-A-0 -d 1
+    bspc monitor eDP-1 -d 2 3 4 5 6 7 8 9 10
+    bspc monitor HDMI-1 -d 1
   elif [[ $screenlayout == 'kietem' ]]; then
     $HOME/.screenlayout/kietem.sh
     bspc monitor eDP-1 -d 1
     bspc monitor HDMI-1 -d 2 3 4 5 6 7 8 9
-  elif [[ $screenlayout == 'kietem_onescreen' ]]; then
-    $HOME/.screenlayout/kietem_onescreen.sh
+  elif [[ $screenlayout == 'onescreen' ]]; then
+    $HOME/.screenlayout/onescreen.sh
     # bspc monitor eDP-1 -d 1
     btops &
+  elif [[ $screenlayout == 'external-top' ]]; then
+    $HOME/.screenlayout/external-top.sh
   else
     $HOME/.screenlayout/rightScreen.sh
     bspc monitor eDP -d 1 2 3 4 5 6 7 8
@@ -95,6 +97,8 @@ bspc rule -a Tk state=floating
 bspc rule -a com-sun-tools-javac-launcher-Main state=floating
 bspc rule -a flameshot state=floating
 bspc rule -a Gpick state=floating
+bspc rule -a Main_meeting state=floating
+bspc rule -a Meeting state=floating
 bspc rule -a Deno state=tiled
 bspc rule -a Ulauncher border=off state=floating
 bspc rule -a Protonvpn border=on state=floating center=on
