@@ -3,22 +3,27 @@ source ~/.config/rofi/source/source.sh
 
 terminal=$1
 
-ALACRITTY_CONF="/home/loc/.config/alacritty/alacritty.yml"
-KITTY_CONF="/home/loc/.config/kitty/kitty.conf"
+ALACRITTY_CONF="$HOME/.config/alacritty/alacritty.yml"
+KITTY_CONF="$HOME/.config/kitty/kitty.conf"
+TMUX_CONF="$HOME/.config/tmux/tmux.conf"
 
 function change_theme() {
   colorscheme_id=$1
 
   if [[ $terminal == "kitty" ]]; then
-    border_hexcolor=$(grep -w color3 ~/.config/kitty/themes/monokai/monokai-pro$colorscheme_id.conf | grep -oP 'color3 \s+\K[^ ]+')
+    border_hexcolor=$(grep -w color3 ~/.config/kitty/themes/monokai/monokai-pro_$colorscheme_id.conf | grep -oP 'color3 \s+\K[^ ]+')
     sed -i -e "0,/bspc\ config\ focused_border_color.*/s//bspc\ config\ focused_border_color\ '$border_hexcolor'/" ~/.config/bspwm/bspwmrc
-    sed -i -e "0,/include\ \.\/themes\/.*/s//include .\/themes\/monokai\/monokai-pro$colorscheme_id\.conf/" $KITTY_CONF
+    sed -i -e "0,/include\ \.\/themes\/.*/s//include .\/themes\/monokai\/monokai-pro_$colorscheme_id\.conf/" $KITTY_CONF
     kill -SIGUSR1 $(pgrep kitty)
     bspc wm -r
   elif [[ $terminal == "alacritty" ]]; then
     dunstify 'config monokai.sh for alacritty !!!'
     sed -i -e '0,/colors: .*/s//colors: *'$colorscheme_id'/' $ALACRITTY_CONF
   fi
+
+  # Update tmux colorscheme
+  sed -i -e '0,/set\ -g @monokai-pro-filter.*/s//set -g @monokai-pro-filter '\'$colorscheme_id\''/' $TMUX_CONF
+  tmux source-file $TMUX_CONF
 }
 
 function nav_back() {
@@ -36,10 +41,10 @@ MENU="$(rofi -sep "|" \
 
 case "$MENU" in
   *"$previous") nav_back ;;
-  *""$prefix"Monokai Pro") change_theme "" ;;
-  *""$prefix"Monokai Pro Classic") change_theme "_classic" ;;
-  *""$prefix"Monokai Pro (Filter Machine)") change_theme "_machine" ;;
-  *""$prefix"Monokai Pro (Filter Octagon)") change_theme "_octagon" ;;
-  *""$prefix"Monokai Pro (Filter Ristretto)") change_theme "_ristretto" ;;
-  *""$prefix"Monokai Pro (Filter Spectrum)") change_theme "_spectrum" ;;
+  *""$prefix"Monokai Pro") change_theme "pro" ;;
+  *""$prefix"Monokai Pro Classic") change_theme "classic" ;;
+  *""$prefix"Monokai Pro (Filter Machine)") change_theme "machine" ;;
+  *""$prefix"Monokai Pro (Filter Octagon)") change_theme "octagon" ;;
+  *""$prefix"Monokai Pro (Filter Ristretto)") change_theme "ristretto" ;;
+  *""$prefix"Monokai Pro (Filter Spectrum)") change_theme "spectrum" ;;
 esac
