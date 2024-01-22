@@ -84,6 +84,8 @@ alias ld='ls -d'
 command -v colorls > /dev/null && alias ls='colorls --sd --gs --color=always --indicator-style=none' && \
 	alias tree='colorls --tree'
 
+alias vis="NVIM_APPNAME=vimster nvim"
+
 function nvims() {
   items=("default" "NvChad" "LazyVim")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config: " --height=~50% --layout=reverse --border --exit-0)
