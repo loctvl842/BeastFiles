@@ -84,7 +84,7 @@ alias ld='ls -d'
 command -v colorls > /dev/null && alias ls='colorls --sd --gs --color=always --indicator-style=none' && \
 	alias tree='colorls --tree'
 
-alias vis="NVIM_APPNAME=vimster nvim"
+alias bvim="NVIM_APPNAME=BeastVim nvim"
 
 function nvims() {
   items=("default" "NvChad" "LazyVim")
@@ -97,4 +97,3 @@ function nvims() {
   fi
   NVIM_APPNAME=$config nvim $@
 }
-

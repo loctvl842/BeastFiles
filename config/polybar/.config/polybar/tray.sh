@@ -6,7 +6,7 @@ for (( i = 0; i < ${#cmds[@]} ; i++ )); do
   eval "killall $process"
 done
 
-interval=1
+interval=2
 
 sleep $interval
 for (( i = 0; i < ${#cmds[@]} ; i++ )); do

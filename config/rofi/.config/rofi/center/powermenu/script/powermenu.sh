@@ -46,7 +46,7 @@ case $chosen in
     ans=$(confirm_exit "Shut Down" "shutdown")
     if [[ $ans == "Shut Down" ]]; then
       # mplayer ~/.config/rofi/exit.wav
-      sleep 0.1
+      sleep 0.5
       systemctl poweroff
     elif [[ $ans == "Cancel" ]]; then
       exit 0
@@ -57,7 +57,7 @@ case $chosen in
     ans=$(confirm_exit "Reboot" "reboot" &)
     if [[ $ans == "Reboot" ]]; then
       # mplayer ~/.config/rofi/exit.wav
-      sleep 0.1
+      sleep 0.5
       systemctl reboot
     elif [[ $ans == "Cancel" ]]; then
       exit 0
@@ -65,6 +65,7 @@ case $chosen in
     ;;
 
   $lock)
+    sleep 0.5
     if [[ -f /usr/bin/i3lock ]]; then
       i3lock-fancy-rapid 5 3
     else
@@ -76,7 +77,7 @@ case $chosen in
     ans=$(confirm_exit "Suspend" "suspend" &)
     if [[ $ans == "Suspend" ]]; then
       # mplayer ~/.config/rofi/exit.wav
-      sleep 0.1
+      sleep 0.5
       systemctl suspend
     elif [[ $ans == "Cancel" ]]; then
       exit 0
@@ -88,7 +89,7 @@ case $chosen in
     if [[ $ans == "Log Out" ]]; then
       if [ $wm == "bspwm" ]; then
         # mplayer ~/.config/rofi/exit.wav
-        sleep 0.1
+        sleep 0.5
         bspc quit
       elif [[ $wm == "i3" ]]; then
         i3-msg exit
