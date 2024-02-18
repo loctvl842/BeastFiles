@@ -53,6 +53,60 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 ```
 
+### Accepting Android Licenses
+
+```sh
+yes | flutter doctor --android-licenses
+```
+
+### Creating a Flutter Project
+
+```sh
+flutter create flutter_starter
+```
+
+### Running the Flutter Project
+```sh
+cd flutter_starter
+flutter run
+```
+
+#### Troubleshooting
+
+1. You may encounter an error like this when running `flutter run`:
+```sh
+fatal: detected dubious ownership in repository at '/opt/flutter'
+To add an exception for this directory, call:
+
+        git config --global --add safe.directory /opt/flutter
+Launching lib/main.dart on Linux in debug mode...
+Building Linux application...
+CMake Error at /usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:48 (message):
+  Could not find compiler set in environment variable CXX:
+
+  clang++.
+
+Call Stack (most recent call first):
+  CMakeLists.txt:3 (project)
+
+
+CMake Error: CMAKE_CXX_COMPILER not set, after EnableLanguage
+Exception: Unable to generate build files
+```
+
+**How to Fix**:
+
+1. Install `clang`:
+
+```sh
+sudo pacman -S clang
+```
+
+2. Set `CXX` environment variable:
+```sh
+export CXX=clang++
+```
+
 ## References
 
 - [How to setup Flutter on Arch linux](https://medium.com/@rajgadhiya011/how-to-setup-flutter-on-arch-linux-with-android-sdk-a-step-by-step-guide-f40450b55669)
