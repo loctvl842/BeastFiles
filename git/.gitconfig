@@ -13,3 +13,5 @@
   helper = !/usr/bin/gh auth git-credential
 [http]
 	postBuffer = 524288000
+[safe]
+	directory = /opt/flutter

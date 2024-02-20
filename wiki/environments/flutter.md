@@ -32,7 +32,7 @@ yay -Sy flutter
 ### Downloading Android SDK and Related Packages
 
 ```sh
-yay -Sy android-sdk android-sdk-build-tools android-sdk-cmdline-tools-latest android-platform android-sdk-platform-tools
+yay -Sy android-sdk android-sdk-build-tools android-sdk-cmdline-tools-latest android-platform android-sdk-platform-tools android-sdk-emulator
 ```
 
 ```sh
@@ -41,15 +41,39 @@ sudo cp -R /opt/android-sdk ~
 
 ```sh
 cd ~
-sudo goroupadd android-sdk
-sudo chown -R loc:android-sdk android-sdk
+sudo groupadd android-sdk
+sudo chown -R $(whoami):android-sdk android-sdk
+```
+
+#### Setting up emulator
+
+- Install a system image for the emulator
+```sh
+sdkmanager "system-images;android-30;google_apis;x86_64"
+```
+
+- Create an Android Virtual Device (AVD) using above system image
+```sh
+avdmanager create avd -n test -k "system-images;android-30;google_apis;x86_64"
+```
+
+- Check the list of AVDs
+```sh
+avdmanager list
+```
+
+- Create a new emulator
+```sh
+emulator -avd test
 ```
 
 #### Setting Environment Variables
 
 ```sh
-export ANDROID_HOME=$HOME/android-sdk
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
+export PATH=$ANDROID_HOME/emulator:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$ANDROID_HOME/tools:$PATH
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 ```
 
@@ -73,7 +97,7 @@ flutter run
 
 #### Troubleshooting
 
-1. You may encounter an error like this when running `flutter run`:
+##### You may encounter an error like this when running `flutter run`:
 ```sh
 fatal: detected dubious ownership in repository at '/opt/flutter'
 To add an exception for this directory, call:
