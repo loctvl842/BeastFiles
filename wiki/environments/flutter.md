@@ -36,13 +36,9 @@ yay -Sy android-sdk android-sdk-build-tools android-sdk-cmdline-tools-latest and
 ```
 
 ```sh
-sudo cp -R /opt/android-sdk ~
-```
-
-```sh
 cd ~
 sudo groupadd android-sdk
-sudo chown -R $(whoami):android-sdk android-sdk
+sudo chown -R $(whoami):android-sdk /opt/android-sdk
 ```
 
 #### Setting up emulator
@@ -52,19 +48,32 @@ sudo chown -R $(whoami):android-sdk android-sdk
 sdkmanager "system-images;android-30;google_apis;x86_64"
 ```
 
+- Verify the system image is installed
+```sh
+sdkmanager --list_installed
+```
+
 - Create an Android Virtual Device (AVD) using above system image
 ```sh
-avdmanager create avd -n test -k "system-images;android-30;google_apis;x86_64"
+avdmanager create avd -n test -k "system-images;android-30;google_apis;x86_64" -d 1
 ```
+
+**NOTE:** `1` is the device id for `Galaxy Nexus`
+Check it out using `avdmanager list device`
 
 - Check the list of AVDs
 ```sh
 avdmanager list
 ```
 
+- To remove an AVD
+```sh
+avdmanager delete avd -n test
+```
+
 - Create a new emulator
 ```sh
-emulator -avd test
+/opt/android-sdk/emulator/emulator -avd test
 ```
 
 #### Setting Environment Variables
@@ -95,6 +104,30 @@ flutter create flutter_starter
 cd flutter_starter
 flutter run
 ```
+
+To run the app on an emulator, first start the emulator and then run the app.
+```sh
+/opt/android-sdk/emulator/emulator -avd test
+```
+
+### Building Flutter App
+
+```sh
+flutter run -d <device_id>
+```
+
+To list available devices:
+```sh
+flutter devices
+```
+
+```Sample
+Found 2 connected devices:
+  sdk gphone x86 64 (mobile) • emulator-5554 • android-x64 • Android 11 (API 30) (emulator)
+  Linux (desktop)            • linux         • linux-x64   • Arch Linux 6.7.5-arch1-1
+```
+
+Then the `<device_id>` can be `emulator-5554` or `linux`.
 
 #### Troubleshooting
 
@@ -136,3 +169,4 @@ export CXX=clang++
 
 - [How to setup Flutter on Arch linux](https://medium.com/@rajgadhiya011/how-to-setup-flutter-on-arch-linux-with-android-sdk-a-step-by-step-guide-f40450b55669)
 - [Discussion](https://www.reddit.com/r/neovim/comments/14c5e6o/how_to_set_up_dartflutter_with_neovim/)
+- [Android Variables](https://developer.android.com/tools/variables#envar)

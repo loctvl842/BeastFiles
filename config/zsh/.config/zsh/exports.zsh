@@ -96,10 +96,10 @@ nvm() {
 # export PATH=$PATH:$ANDROID_HOME/platform-tools
 #
 # Flutter
-export ANDROID_HOME=/opt/android-sdk
-export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/tools
+export ANDROID_HOME=$HOME/andoird-sdk
+export PATH=$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/emulator:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export CXX=clang++
