@@ -15,3 +15,5 @@
 	postBuffer = 524288000
 [safe]
 	directory = /opt/flutter
+[pull]
+	rebase = false
