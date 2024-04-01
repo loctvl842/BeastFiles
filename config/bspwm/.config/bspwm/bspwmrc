@@ -2,62 +2,76 @@
 
 bspc rule -r "*"
 
-bar="polybar"
+BAR="polybar"
+# Get the first HDMI output name and assign it to a variable
+HDMI_OUTPUT=$(xrandr --listmonitors | grep -o 'HDMI[^ ]*' | head -n 1)
+EDP_OUTPUT=$(xrandr --listmonitors | grep -o 'eDP[^ ]*' | head -n 1)
 
-if [[ $bar == "polybar" ]]; then
+### Launch on start
+
+if [[ $BAR == "polybar" ]]; then
   killall gnome-panel
   polybar=$(pgrep -x polybar > /dev/null && echo "Process found" || echo "Process not found")
   if [[ $polybar == "Process not found" ]]; then
     $HOME/.config/polybar/launch.sh &
   fi
-elif [[ $bar == "gnome-panel" ]]; then
+elif [[ $BAR == "gnome-panel" ]]; then
   killall polybar
   gnome-panel &
 fi
 
-# Get the first HDMI output name and assign it to a variable
-HDMI_OUTPUT=$(xrandr --listmonitors | grep -o 'HDMI[^ ]*' | head -n 1)
-EDP_OUTPUT=$(xrandr --listmonitors | grep -o 'eDP[^ ]*' | head -n 1)
-
 # screenlayout="external-top"
 screenlayout="right"
 
-if [[ $(xrandr -q | grep "$HDMI_OUTPUT" | grep -oP "$HDMI_OUTPUT \K\w+") == "connected" ]]; then
-  killall btops
+# Function to check if a display is connected
+# - Arguments:
+#  - $1: The display output name (e.g. HDMI-1, eDP-1, etc.)
+# - Returns:
+#  - 0 if the display is connected
+#  - 1 if the display is disconnected
+is_display_connected() {
+  local DISPLAY_OUTPUT=$1
+  local connected_status=$(xrandr -q | grep "$DISPLAY_OUTPUT" | grep -oP "$DISPLAY_OUTPUT \K\w+")
+  if [[ $connected_status == "connected" ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+if is_display_connected $HDMI_OUTPUT; then
+  dunstify "HDMI detected"
+  # External monitor on the left
   if [[ $screenlayout == 'left' ]]; then
     $HOME/.screenlayout/leftScreen.sh
-    bspc monitor $EDP_OUTPUT -d 2 3 4 5 6 7 8 9 10
-    bspc monitor $HDMI_OUTPUT -d 1
+    bspc monitor $EDP_OUTPUT -d 10
+    bspc monitor $HDMI_OUTPUT -d 1 2 3 4 5 6 7 8 9
+  # External monitor on the right
   elif [[ $screenlayout == 'right' ]]; then
     $HOME/.screenlayout/rightScreen.sh
     bspc monitor $EDP_OUTPUT -d 1
     bspc monitor $HDMI_OUTPUT -d 2 3 4 5 6 7 8 9 10
-  elif [[ $screenlayout == 'kietem' ]]; then
-    $HOME/.screenlayout/kietem.sh
-    bspc monitor $EDP_OUTPUT -d 1
-    bspc monitor $HDMI_OUTPUT -d 2 3 4 5 6 7 8 9
-  elif [[ $screenlayout == 'onescreen' ]]; then
-    $HOME/.screenlayout/onescreen.sh
-    # bspc monitor $EDP_OUTPUT -d 1
-    btops &
-  elif [[ $screenlayout == 'external-top' ]]; then
-    $HOME/.screenlayout/external-top.sh
   else
-    $HOME/.screenlayout/rightScreen.sh
-    bspc monitor $EDP_OUTPUT -d 1 2 3 4 5 6 7 8
-    bspc monitor $HDMI_OUTPUT -d 9 10
+    $HOME/.screenlayout/external-top.sh
+    bspc monitor $EDP_OUTPUT -d 1 2 3 4 5
+    bspc monitor $HDMI_OUTPUT -d 6 7 8 9 10
   fi
 else
+  dunstify "HDMI is not connected"
   bspc monitor $EDP_OUTPUT -d 1 2 3 4 5 6 7 8 9 10
-  killall btops
-  btops & # run in background for the other command
 fi
+
+# if [[ $(xrandr -q | grep "$HDMI_OUTPUT" | grep -oP "$HDMI_OUTPUT \K\w+") == "connected" ]]; then
+# else
+#   bspc monitor $EDP_OUTPUT -d 1 2 3 4 5 6 7 8 9 10
+#   killall btops
+#   btops & # run in background for the other command
+# fi
 
 pgrep -x picom > /dev/null || picom &
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc config border_width         1
-bspc config -m $EDP_OUTPUT window_gap           10
 
 bspc config split_ratio           0.5
 bspc config borderless_monocle    true
@@ -66,16 +80,34 @@ bspc config focus_follows_pointer true
 bspc config automatic_scheme alternate
 bspc config automatic_scheme @remove alternate
 
-# Only apply this rule for main monitor of laptop
-bspc config -m $EDP_OUTPUT top_padding 38
+## Only apply this rule for main monitor of laptop
+# gap
+bspc config -m $EDP_OUTPUT window_gap 10
+# padding
+bspc config -m $EDP_OUTPUT top_padding 39
 bspc config -m $EDP_OUTPUT left_padding 10
 bspc config -m $EDP_OUTPUT right_padding 10
 bspc config -m $EDP_OUTPUT bottom_padding 10
-# This is for the second monitor
-bspc config -m $HDMI_OUTPUT top_padding 32
+# monocle padding
+bspc config -m $EDP_OUTPUT top_monocle_padding -10
+bspc config -m $EDP_OUTPUT left_monocle_padding -10
+bspc config -m $EDP_OUTPUT right_monocle_padding -10
+bspc config -m $EDP_OUTPUT bottom_monocle_padding -10
+
+## This is for the second monitor
+# gap
+bspc config -m $HDMI_OUTPUT window_gap 8
+# padding
+bspc config -m $HDMI_OUTPUT top_padding 33
 bspc config -m $HDMI_OUTPUT left_padding 8
 bspc config -m $HDMI_OUTPUT right_padding 8
 bspc config -m $HDMI_OUTPUT bottom_padding 8
+# monocle padding
+bspc config -m $HDMI_OUTPUT top_monocle_padding -8
+bspc config -m $HDMI_OUTPUT left_monocle_padding -8
+bspc config -m $HDMI_OUTPUT right_monocle_padding -8
+bspc config -m $HDMI_OUTPUT bottom_monocle_padding -8
+
 
 # border color
 bspc config normal_border_color "#3b3f4c"
@@ -97,6 +129,7 @@ bspc config honor_size_hints true
 bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
 bspc config merge_overlapping_monitors true
+
 
 ########################################################
 ############       BSPC RULE       #####################
@@ -121,10 +154,6 @@ bspc rule -a Ulauncher border=off state=floating
 bspc rule -a Protonvpn border=on state=floating center=on
 bspc rule -a photoshop.exe border=on state=floating
 bspc rule -a Postman state=floating
-
-# bspc rule -a \* rectangle 800x600+0+0 center=true
-
-bspc config external_rules_command ~/.config/bspwm/src/float_AndroidEmulator.sh
 
 # fix X cursor to default
 xsetroot -cursor_name left_ptr &
