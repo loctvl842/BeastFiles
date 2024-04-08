@@ -19,8 +19,16 @@ function send_notification() {
 
 function notify() {
   command=$1
-  echo $command
-  volume=$(pactl list sinks | awk '$1=="Volume:" {gsub(/[%]/, "", $5); print $5}')
+
+  # Get device name of the default sink
+  device_name=$(pactl list sinks | grep 'analog-stereo' | awk '/Name:/ {print $2}')
+
+  # Get the volume of all sinks
+  # volume=$(pactl list sinks | awk '$1=="Volume:" {gsub(/[%]/, "", $5); print $5}')
+
+  # Get the volume by device name
+  volume=$(pactl list sinks | awk -v device="$device_name" '/Name:/ && $0 ~ device {flag=1; next} flag && $1=="Volume:" {gsub(/[%]/, "", $5); print $5; exit}')
+
   dunstify -a "changevolume" -u low -r "9993" -h int:value:"$volume" -i "~/.local/bin/dunst_icons/volume/volume-$command.png" "Volume: ${volume}%" -t 2000
 }
 
