@@ -9,19 +9,6 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 
-precmd_get_conda_env_name() {
-  if [[ -n $CONDA_PREFIX ]]; then
-    if [[ $(basename $CONDA_PREFIX) == "miniconda3" ]]; then
-      CONDA_ENV="base"
-    else
-      CONDA_ENV="$(basename $CONDA_PREFIX)"
-    fi
-  else
-    CONDA_ENV=""
-  fi
-}
-precmd_functions+=( precmd_get_conda_env_name )
-
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 #
 +vi-git-untracked(){
@@ -93,10 +80,3 @@ PROMPT="${MACHINE}${PROMPT_WORKING_DIR}${reset_color}"
 
 PROMPT+="\$vcs_info_msg_0_"
 PROMPT+="${PROMPT_STATUS}"
-
-# Get virtual environment name of python
-
-RPROMPT_LEFT_SEP="%F{$YELLOW_CODE}%f"
-RPROMPT_RIGHT_SEP="%F{$YELLOW_CODE}%f"
-RPROMPT_CONTENT='%K{$YELLOW_CODE}${black_text}${bold_text}${CONDA_ENV}%k'
-RPROMPT="${RPROMPT_LEFT_SEP}${RPROMPT_CONTENT}${RPROMPT_RIGHT_SEP}"

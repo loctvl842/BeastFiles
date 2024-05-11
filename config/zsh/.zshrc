@@ -1,11 +1,13 @@
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 # Created by newuser for 5.9
 
-# history
-HISTFILE=~/.zsh_history
-
 # theme
 plug "$HOME/.config/zsh/prompt.zsh"
+
+# history
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
 
 # plugins
 plug "zap-zsh/vim"
@@ -23,3 +25,10 @@ plug "$HOME/.config/zsh/options.zsh"
 plug "$HOME/.config/zsh/login.zsh"
 plug "$HOME/.config/zsh/keybind.zsh"
 plug "$HOME/.config/zsh/utils.zsh"
+
+# Tools
+plug "$HOME/.config/zsh/tools/conda.zsh"
+plug "$HOME/.config/zsh/tools/gvm.zsh"
+plug "$HOME/.config/zsh/tools/nvm.zsh"
+plug "$HOME/.config/zsh/tools/pnpm.zsh"
+# plug "$HOME/.config/zsh/tools/flutter.zsh"
