@@ -5,9 +5,9 @@ KITTY_CONF="/home/loc/.config/kitty/kitty.conf"
 
 function change_theme() {
   colorscheme_id=$1
-  border_hexcolor=#ffffff
+  # border_hexcolor=#ffffff
   # sed -i -e '0,/colors: .*/s//colors: *'$colorscheme_id'/' $ALACRITTY_CONF
-  sed -i -e "0,/bspc\ config\ focused_border_color.*/s//bspc\ config\ focused_border_color\ '$border_hexcolor'/" ~/.config/bspwm/bspwmrc
+  # sed -i -e "0,/bspc\ config\ focused_border_color.*/s//bspc\ config\ focused_border_color\ '$border_hexcolor'/" ~/.config/bspwm/bspwmrc
   sed -i -e "0,/include\ \.\/themes\/.*/s//include .\/themes\/$colorscheme_id\.conf/" $KITTY_CONF
   bspc wm -r &
   kill -SIGUSR1 $(pgrep kitty)

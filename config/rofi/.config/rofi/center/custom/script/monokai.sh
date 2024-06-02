@@ -11,7 +11,7 @@ function change_theme() {
   colorscheme_id=$1
 
   if [[ $terminal == "kitty" ]]; then
-    border_hexcolor=$(grep -w color3 ~/.config/kitty/themes/monokai/monokai-pro_$colorscheme_id.conf | grep -oP 'color3 \s+\K[^ ]+')
+    border_hexcolor=$(grep -w color7 ~/.config/kitty/themes/monokai/monokai-pro_$colorscheme_id.conf | grep -oP 'color7 \s+\K[^ ]+')
     sed -i -e "0,/bspc\ config\ focused_border_color.*/s//bspc\ config\ focused_border_color\ '$border_hexcolor'/" ~/.config/bspwm/bspwmrc
     sed -i -e "0,/include\ \.\/themes\/.*/s//include .\/themes\/monokai\/monokai-pro_$colorscheme_id\.conf/" $KITTY_CONF
     kill -SIGUSR1 $(pgrep kitty)
