@@ -7,7 +7,7 @@ export MANWIDTH=999
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/share/go/bin:$PATH
 export PATH=$PATH:$HOME/.dotnet/tools
-
+export WAYLAND_DISPLAY=wayland-1
 export GOPATH=$HOME/.local/share/go
 
 ########## colorls ##################

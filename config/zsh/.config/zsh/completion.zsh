@@ -7,5 +7,5 @@ zstyle ':completion::complete:lsof:*' menu yes select
 zmodload zsh/complist
 compinit
 
-setxkbmap -option caps:escape
+# setxkbmap -option caps:escape
 xset r rate 240 60

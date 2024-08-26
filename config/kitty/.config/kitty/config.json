@@ -6,15 +6,15 @@
       "italic_font": "JetBrainsMono NF Italic",
       "bold_italic_font": "bold_italic_font",
       "font_size": 9.5,
-      "adjust_line_height": 8
+      "adjust_line_height": 3
     },
     "eDP": {
       "font_size": 9.5,
-      "adjust_line_height": 8
+      "adjust_line_height": 4
     },
     "HDMI": {
       "font_size": 8.5,
-      "adjust_line_height": 8
+      "adjust_line_height": 2
     }
   }
 }
