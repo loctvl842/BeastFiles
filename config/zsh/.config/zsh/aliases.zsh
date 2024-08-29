@@ -75,12 +75,39 @@ CYGWIN* | MINGW32* | MSYS* | MINGW*)
 esac
 
 ### LS & TREE
-alias ls='ls --color=auto'
-alias ll='ls -l'
-alias lla='ls -la'
-alias la='ls -A'
-alias lf='ls -f'
-alias ld='ls -d'
+# colorls
+# alias ls='ls --color=auto'
+# alias ll='ls -l'
+# alias lla='ls -la'
+# alias la='ls -A'
+# alias lf='ls -f'
+# alias ld='ls -d'
+
+aurhelper=yay
+
+alias  c='clear' # clear terminal
+alias  l='eza  -h  --icons=auto' # long list
+alias ls='eza      --icons=auto' # short list
+alias la='eza  -a  --icons=auto' # all list
+alias ll='eza  -ha --icons=auto --sort=name --group-directories-first' # long list all
+alias ld='eza  -hD --icons=auto' # long list dirs
+alias lt='eza --icons=auto --tree' # list folder as tree
+alias un='$aurhelper -Rns' # uninstall package
+alias up='$aurhelper -Syu' # update system/package/aur
+alias pl='$aurhelper -Qs' # list installed package
+alias pa='$aurhelper -Ss' # list available package
+alias pc='$aurhelper -Sc' # remove unused cache
+
+# Handy change dir shortcuts
+alias ..='cd ..'
+alias ...='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
+
+# Always mkdir a path (this doesn't inhibit functionality to make a single dir)
+alias mkdir='mkdir -p'
+
 command -v colorls > /dev/null && alias ls='colorls --sd --gs --color=always --indicator-style=none' && \
 	alias tree='colorls --tree'
 
