@@ -1,4 +1,4 @@
-declare a cmds=('mictray' 'cbatticon -u 1 -i standard -l 20 -o "brillo -S 20"' 'nm-applet')
+declare a cmds=('mictray' 'cbatticon -u 1 -i standard -l 20 -o "brillo -S 20"' 'nm-applet' 'blueman-applet')
  # 'blueman-applet'
 
 for (( i = 0; i < ${#cmds[@]} ; i++ )); do
