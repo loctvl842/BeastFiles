@@ -1,8 +1,11 @@
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 # Created by newuser for 5.9
 
-# theme
-plug "$HOME/.config/zsh/prompt.zsh"
+# Theme
+# plug "$HOME/.config/zsh/themes/beast.zsh"
+source ~/.config/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
+# source ~/.config/zsh/themes/powerlevel10k/config/p10k-rainbow.zsh
+[[ ! -f ~/.config/zsh/themes/.p10k.zsh ]] || source ~/.config/zsh/themes/.p10k.zsh
 
 # history
 HISTFILE=~/.zsh_history
