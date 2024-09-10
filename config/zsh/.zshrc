@@ -14,7 +14,6 @@ SAVEHIST=1000000
 
 # plugins
 plug "zap-zsh/vim"
-plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "hlissner/zsh-autopair"
 plug "zap-zsh/supercharge"
