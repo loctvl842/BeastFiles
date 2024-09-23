@@ -68,8 +68,8 @@ fi
 #   btops & # run in background for the other command
 # fi
 
-pgrep -x picom > /dev/null || picom &
 pgrep -x sxhkd > /dev/null || sxhkd &
+pgrep -x picom > /dev/null || picom --experimental-backends -b &
 
 bspc config border_width         1
 
