@@ -69,7 +69,8 @@ fi
 # fi
 
 pgrep -x sxhkd > /dev/null || sxhkd &
-pgrep -x picom > /dev/null || picom --experimental-backends -b &
+# pgrep -x picom > /dev/null || picom --experimental-backends -b &
+pgrep -x picom > /dev/null || picom &
 
 bspc config border_width         1
 
