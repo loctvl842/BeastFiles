@@ -8,6 +8,7 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/share/go/bin:$PATH
 export PATH=$PATH:$HOME/.dotnet/tools
 export GOPATH=$HOME/.local/share/go
+export GTK_THEME="WhiteSur-Dark-solid"
 
 ########## colorls ##################
 # export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"

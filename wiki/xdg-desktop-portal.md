@@ -6,26 +6,36 @@
 
 ### 1. Install Required Packages
 
-Since you're using **bspwm** with **Wayland**, you'll need to install the base **xdg-desktop-portal** package and the **xdg-desktop-portal-wlr** backend for Wayland compositors.
+**bspwm** with **Gtk**, you'll need to install the base **xdg-desktop-portal** package and the **xdg-desktop-portal-gtk** backend for Wayland compositors.
 
 ```bash
-sudo pacman -S xdg-desktop-portal xdg-desktop-portal-wlr
+sudo pacman -S xdg-desktop-portal xdg-desktop-portal-gtk
 ```
 
 This setup ensures that applications running in a sandbox (like those installed via Flatpak) can interact with your Wayland session.
 
-### 2. Start and Enable the xdg-desktop-portal Service
+### 2. Configure the Service
+
+```sh
+[preferred]
+default=gtk
+backend=xdg-desktop-portal-gtk
+```
+
+### 3. Start and Enable the xdg-desktop-portal Service
 
 To make sure `xdg-desktop-portal` works properly, we need to start it and ensure it runs on login. The service must run in the context of your user session, not as root.
 
 - **Start the service**:
   ```bash
   systemctl --user start xdg-desktop-portal
+  systemctl --user start xdg-desktop-portal-gtk
   ```
 
 - **Enable the service to auto-start on login**:
   ```bash
   systemctl --user enable xdg-desktop-portal
+  systemctl --user enable xdg-desktop-portal-gtk
   ```
 
 - **Check the status of the service** to make sure it’s running correctly:
@@ -35,7 +45,8 @@ To make sure `xdg-desktop-portal` works properly, we need to start it and ensure
 
 This ensures the portal service is available when any Flatpak application requests access to system resources, such as opening files or handling URLs.
 
-### 3. Configuring Telegram and Postman with Flatseal
+### 4. Example 
+#### Telegram
 
 To grant Telegram and Postman access to your file system and integrate them properly with **xdg-desktop-portal**, you'll need to configure them using **Flatseal**.
 
@@ -48,7 +59,7 @@ To grant Telegram and Postman access to your file system and integrate them prop
    - **Filesystem**: Enable **All user files** to allow access to the home directory.
    - **D-Bus Session Bus**: Ensure `org.freedesktop.portal.Desktop` and `org.freedesktop.portal.FileChooser` are allowed for full integration with the desktop.
 
-### 4. Testing the Setup
+##### Testing the Setup
 
 To verify everything is working correctly, run the following test:
 
@@ -65,3 +76,26 @@ This command should open the URL in your default browser. If it works, applicati
 ---
 
 This section should help integrate your Flatpak applications with your Arch Linux bspwm environment, ensuring that `xdg-open` and other desktop features work seamlessly!
+
+#### Postman
+
+##### Installation
+
+```sh
+flatpak install flathub com.getpostman.Postman
+```
+
+By default, Postman will fail due to missing certificates. To fix this, follow the steps below:
+
+- Enter shell environment of Postman via flatpak:
+
+  ```sh
+  flatpak run --command=sh com.getpostman.Postman
+  ```
+
+- Generate a new certificate:
+
+```sh
+cd ~/.var/app/com.getpostman.Postman/config/Postman/proxy
+openssl req -subj '/C=US/CN=Postman Proxy' -new -newkey rsa:2048 -sha256 -days 365 -nodes -x509 -keyout postman-proxy-ca.key -out postman-proxy-ca.crt
+```
