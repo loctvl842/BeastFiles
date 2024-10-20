@@ -186,7 +186,7 @@ case "$(uname -s)" in
   
   Linux)
     # Linux specific aliases
-    alias ls='ls --color=auto'  # Enable colorized output for ls on Linux
+    # alias ls='ls --color=auto'  # Enable colorized output for ls on Linux
     ;;
   
   CYGWIN* | MINGW32* | MSYS* | MINGW*)
@@ -247,16 +247,6 @@ alias kdf="kubectl describe -f"               # Describe a resource from a file
 alias kpf="kubectl port-forward"              # Port-forward to a local machine ⭐
 alias krs="kubectl rollout restart deployment" # Restart a deployment ⭐
 alias ktop="kubectl top"                      # Display resource (CPU/memory) usage ⭐
-
-# ------------------------------
-# Fallback for 'colorls' if installed
-# ------------------------------
-
-# If 'colorls' is available, use it for enhanced 'ls' and 'tree' commands
-if command -v colorls > /dev/null; then
-  alias ls='colorls --sd --gs --color=always --indicator-style=none'
-  alias tree='colorls --tree'
-fi
 
 # ------------------------------
 # System Health
