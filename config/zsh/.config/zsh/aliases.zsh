@@ -249,6 +249,97 @@ alias krs="kubectl rollout restart deployment" # Restart a deployment ⭐
 alias ktop="kubectl top"                      # Display resource (CPU/memory) usage ⭐
 
 # ------------------------------
+# Git Aliases
+# ------------------------------
+
+# ⭐ Launch Lazygit for a better Git experience
+alias g='lazygit'
+
+# Update all Zsh plugins by pulling the latest changes from their Git repositories
+alias zsh-update-plugins="find \"$ZDOTDIR/plugins\" -type d -exec test -e '{}/.git' ';' -print0 | xargs -0 -I {} git -C {} pull -q"
+
+# ⭐ Stage all changes
+alias ga='git add .'  # Add all changes ⭐
+
+# ⭐ Commit changes with a message
+alias gc='git commit -m'  # Commit with message ⭐
+
+# ⭐ Push commits to the current branch
+alias gp='git push'  # Push changes ⭐
+
+# ⭐ Pull latest changes from the remote repository
+alias gpl='git pull'  # Pull changes ⭐
+
+# ⭐ Show the current status of the repository
+alias gst='git status'  # Show status ⭐
+
+# Create and switch to a new branch
+alias gcb='git checkout -b'  # Create & checkout branch
+
+# List all branches
+alias gb='git branch'  # List branches
+
+# Show commit logs
+alias gl='git log --oneline --graph --decorate'  # Show log
+
+# Show differences not staged for commit
+alias gd='git diff'  # Show diffs
+
+# Show differences between staged and last commit
+alias gds='git diff --staged'  # Show staged diffs
+
+# Clone a repository
+alias gcl='git clone'  # Clone repository
+
+# Remove a tracked file from the working directory and the index
+alias grm='git rm'  # Remove file
+
+# Move or rename a file, a directory, or a symlink
+alias gmv='git mv'  # Move/Rename file
+
+# Reset current HEAD to the specified state
+alias greset='git reset'  # Reset
+
+# Stash the changes in a dirty working directory
+alias gstash='git stash'  # Stash changes
+
+# Apply the latest stashed changes and drop them from the stash list
+alias gstashpop='git stash pop'  # Pop stash
+
+# Tagging commands
+alias gtag='git tag'  # Manage tags
+
+# Merge branches
+alias gmerge='git merge'  # Merge branches
+
+# Rebase the current branch onto another branch
+alias grebase='git rebase'  # Rebase branch
+
+# Fetch updates from the remote repository
+alias gfetch='git fetch'  # Fetch updates
+
+# Show a summary of commits
+alias gsummary='git shortlog -sn'  # Summary of commits
+
+# Interactive rebase
+alias grebasei='git rebase -i'  # Interactive rebase
+
+# Show branches merged into the current branch
+alias gmerged='git branch --merged'  # Show merged branches
+
+# Show branches not merged into the current branch
+alias gunmerged='git branch --no-merged'  # Show unmerged branches
+
+# View commit history for a specific file
+alias gfilelog='git log --follow --'  # Log for a file
+
+# Amend the last commit
+alias gamend='git commit --amend'  # Amend commit
+
+# Show commits that are in the remote but not local
+alias gdiffup='git log ..@{u}'  # Diff with upstream
+
+# ------------------------------
 # System Health
 # ------------------------------
 alias topmem="ps aux --sort=-%mem | head -n 10"  # Top 10 memory-consuming processes
