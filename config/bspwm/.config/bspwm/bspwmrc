@@ -85,7 +85,7 @@ bspc config automatic_scheme @remove alternate
 # gap
 bspc config -m $EDP_OUTPUT window_gap 10
 # padding
-bspc config -m $EDP_OUTPUT top_padding 39
+bspc config -m $EDP_OUTPUT top_padding 
 bspc config -m $EDP_OUTPUT left_padding 10
 bspc config -m $EDP_OUTPUT right_padding 10
 bspc config -m $EDP_OUTPUT bottom_padding 10

@@ -1,7 +1,8 @@
 #!/bin/bash
 
 function send_notification() {
-  volume=$(pactl list sinks | awk '$1=="Volume:" {gsub(/[%]/, "", $5); print $5}')
+  # volume=$(pactl list sinks | awk '$1=="Volume:" {gsub(/[%]/, "", $5); print $5}')
+  volume=$(pactl get-sink-volume "$default_sink" | awk '{gsub(/[%]/, "", $5); print $5}')
   level=0
   if [ $volume -gt 0 -a $volume -lt 33 ]
   then
@@ -27,7 +28,8 @@ function notify() {
   # volume=$(pactl list sinks | awk '$1=="Volume:" {gsub(/[%]/, "", $5); print $5}')
 
   # Get the volume by device name
-  volume=$(pactl list sinks | awk -v device="$device_name" '/Name:/ && $0 ~ device {flag=1; next} flag && $1=="Volume:" {gsub(/[%]/, "", $5); print $5; exit}')
+  # volume=$(pactl list sinks | awk -v device="$device_name" '/Name:/ && $0 ~ device {flag=1; next} flag && $1=="Volume:" {gsub(/[%]/, "", $5); print $5; exit}')
+  volume=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{gsub(/[%]/, "", $5); print $5}') # This works for bluetooth earphone
 
   dunstify -a "changevolume" -u low -r "9993" -h int:value:"$volume" -i "~/.local/bin/dunst_icons/volume/volume-$command.png" "Volume: ${volume}%" -t 2000
 }
