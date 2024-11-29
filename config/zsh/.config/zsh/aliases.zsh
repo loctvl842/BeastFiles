@@ -261,8 +261,11 @@ alias zsh-update-plugins="find \"$ZDOTDIR/plugins\" -type d -exec test -e '{}/.g
 # ⭐ Stage all changes
 alias ga='git add .'  # Add all changes ⭐
 
+# ⭐ Commit changes with an editor
+alias gc='git commit'  # Commit with message ⭐
+
 # ⭐ Commit changes with a message
-alias gc='git commit -m'  # Commit with message ⭐
+alias gcm='git commit -m'  # Commit with message ⭐
 
 # ⭐ Push commits to the current branch
 alias gp='git push'  # Push changes ⭐
