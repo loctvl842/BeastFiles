@@ -14,7 +14,7 @@
     },
     "HDMI": {
       "font_size": 8.5,
-      "adjust_line_height": 2
+      "adjust_line_height": 5
     }
   }
 }

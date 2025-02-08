@@ -10,7 +10,6 @@ jump() {
     }
     echo "Changed directory to: $(pwd)"
     zle accept-line
-    clear
   else
     echo "No directory selected." >&2
     return 1
