@@ -39,4 +39,4 @@ ulauncher --hide-window &
 
 xscreensaver --no-splash &
 
-ibus-daemon -drx &
+ibus-daemon -rxRd &

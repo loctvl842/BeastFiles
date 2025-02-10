@@ -40,14 +40,14 @@ mainbox {
 }
 
 textbox-prompt-colon {
-	font: "SF Pro Bold 15";
+  font: "SF Pro Bold 12";
 }
 
 element-text {
   horizontal-align: 0.45;
   vertical-align: 0;
-	color: @foreground;
-	font: "SF Pro Bold 12";
+  color: @foreground;
+  font: "SF Pro Bold 12";
 }
 
 element.selected {
