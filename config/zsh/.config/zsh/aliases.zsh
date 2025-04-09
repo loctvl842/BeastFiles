@@ -157,7 +157,7 @@ alias bvim="NVIM_APPNAME=BeastVim nvim"
 
 # Function to select and launch different Neovim configurations using fzf
 nvims() {
-  local items=("default" "NvChad" "LazyVim")
+  local items=("default" "NvChad" "LazyVim" "AstroNvim")
   local config
 
   # Prompt the user to select a Neovim configuration
