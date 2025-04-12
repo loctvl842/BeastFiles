@@ -1,7 +1,7 @@
 #!/bin/sh
 export EDITOR="nvim"
 export TERMINAL="kitty"
-export BROWSER="flatpak run com.brave.Browser"
+export BROWSER="open -a 'Brave Browser'"
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 export PATH=$HOME/.local/bin:$PATH

@@ -21,22 +21,50 @@
 unset ZSH_AUTOSUGGEST_USE_ASYNC
 
 function command_not_found_handler {
-    local purple='\e[1;35m' bright='\e[0;1m' green='\e[1;32m' reset='\e[0m'
-    printf 'zsh: command not found: %s\n' "$1"
-    local entries=( ${(f)"$(/usr/bin/pacman -F --machinereadable -- "/usr/bin/$1")"} )
-    if (( ${#entries[@]} )) ; then
-        printf "${bright}$1${reset} may be found in the following packages:\n"
-        local pkg
-        for entry in "${entries[@]}" ; do
+  local purple='\e[1;35m' bright='\e[0;1m' green='\e[1;32m' reset='\e[0m'
+  local cmd="$1"
+  printf 'zsh: command not found: %s\n' "$cmd"
+
+  case "$(uname)" in
+    Linux)
+      if [[ -x /usr/bin/pacman ]]; then
+        local entries=( ${(f)"$(/usr/bin/pacman -F --machinereadable -- "/usr/bin/$cmd")"} )
+        if (( ${#entries[@]} )); then
+          printf "${bright}$cmd${reset} may be found in the following packages:\n"
+          local pkg=""
+          for entry in "${entries[@]}"; do
             local fields=( ${(0)entry} )
-            if [[ "$pkg" != "${fields[2]}" ]] ; then
-                printf "${purple}%s/${bright}%s ${green}%s${reset}\n" "${fields[1]}" "${fields[2]}" "${fields[3]}"
+            if [[ "$pkg" != "${fields[2]}" ]]; then
+              printf "${purple}%s/${bright}%s ${green}%s${reset}\n" "${fields[1]}" "${fields[2]}" "${fields[3]}"
             fi
             printf '    /%s\n' "${fields[4]}"
             pkg="${fields[2]}"
-        done
-    fi
-    return 127
+          done
+        fi
+      fi
+      ;;
+    Darwin)
+      if command -v brew &>/dev/null; then
+        local results
+        results=$(brew search --desc "$cmd" 2>/dev/null)
+        if [[ -n "$results" ]]; then
+          printf "${bright}$cmd${reset} may be available in the following Homebrew packages:\n"
+          while IFS= read -r line; do
+            printf "  ${green}%s${reset}\n" "$line"
+          done <<< "$results"
+        else
+          echo "No matching formulae found in Homebrew."
+        fi
+      else
+        echo "Homebrew not found."
+      fi
+      ;;
+    *)
+      echo "Unsupported OS for command suggestions."
+      ;;
+  esac
+
+  return 127
 }
 
 # Temporarily change options.

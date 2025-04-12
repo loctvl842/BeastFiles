@@ -181,7 +181,7 @@ nvims() {
 case "$(uname -s)" in
   Darwin)
     # macOS specific aliases
-    alias ls='ls -G'  # Enable colorized output for ls on macOS
+    alias ls='eza --icons=auto'  # Enable colorized output for ls on macOS
     ;;
   
   Linux)
