@@ -1,0 +1,41 @@
+theme = "Monokai Pro"
+
+font-family = "JetbrainsMono Nerd Font"
+
+window-padding-y = 0,0
+
+font-size = 12
+
+adjust-underline-position = 25%
+adjust-cell-height = 30%
+adjust-cursor-height = 15%
+
+click-repeat-interval = 100
+
+quick-terminal-position = right
+
+macos-titlebar-style = transparent
+macos-option-as-alt = left
+
+# Option/Alt + Click on any pos in the command typing will move the cursor there
+cursor-click-to-move = true
+window-save-state = always
+focus-follows-mouse = true
+copy-on-select = true
+
+keybind = ctrl+b>x=close_surface
+keybind = ctrl+b>\=new_split:right
+keybind = ctrl+b>/=new_split:down
+
+keybind = ctrl+b>h=goto_split:left
+keybind = ctrl+b>j=goto_split:down
+keybind = ctrl+b>k=goto_split:up
+keybind = ctrl+b>l=goto_split:right
+
+keybind = ctrl+b>z=toggle_split_zoom
+
+keybind = global:cmd+enter=toggle_quick_terminal
+
+keybind = ctrl+b>c=new_tab
+keybind = alt+shift+h=previous_tab
+keybind = alt+shift+l=next_tab
