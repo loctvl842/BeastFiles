@@ -48,10 +48,10 @@ function command_not_found_handler {
         local results
         results=$(brew search --desc "$cmd" 2>/dev/null)
         if [[ -n "$results" ]]; then
-          printf "${bright}$cmd${reset} may be available in the following Homebrew packages:\n"
-          while IFS= read -r line; do
-            printf "  ${green}%s${reset}\n" "$line"
-          done <<< "$results"
+          # printf "${bright}$cmd${reset} may be available in the following Homebrew packages:\n"
+          # while IFS= read -r line; do
+          #   printf "  ${green}%s${reset}\n" "$line"
+          # done <<< "$results"
         else
           echo "No matching formulae found in Homebrew."
         fi
@@ -239,14 +239,14 @@ function command_not_found_handler {
 
   #################################[ os_icon: os identifier ]##################################
   # OS identifier color.
-  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=#0F94D2
-  typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=8
+  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=#FFFFFF
+  typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=0
   # Custom icon.
-  typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION=''
+  typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION=''
 
   ################################[ prompt_char: prompt symbol ]################################
   # Transparent background.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_BACKGROUND=
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_BACKGROUND=#000000
   # Green prompt symbol if the last command succeeded.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=76
   # Red prompt symbol if the last command failed.

@@ -7,5 +7,5 @@ zstyle ':completion::complete:lsof:*' menu yes select
 zmodload zsh/complist
 compinit
 
-# Kubectl
 source <(kubectl completion zsh)
+source <(docker completion zsh)
