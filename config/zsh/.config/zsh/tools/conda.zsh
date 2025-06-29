@@ -14,9 +14,9 @@ function _precmd_get_conda_env_name() {
 precmd_functions+=( _precmd_get_conda_env_name )
 
 function _setup_rpompt_env() {
-  __conda_setup="$('/home/loc/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-  RPROMPT_LEFT_SEP="%F{$YELLOW_CODE}%f"
-  RPROMPT_RIGHT_SEP="%F{$YELLOW_CODE}%f"
+  __conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+  RPROMPT_LEFT_SEP="%F{$YELLOW_CODE}%f"
+  RPROMPT_RIGHT_SEP="%F{$YELLOW_CODE}%f"
   RPROMPT_CONTENT='%K{$YELLOW_CODE}${black_text}${bold_text}${CONDA_ENV}%k'
   RPROMPT="${RPROMPT_LEFT_SEP}${RPROMPT_CONTENT}${RPROMPT_RIGHT_SEP}"
 }
@@ -28,31 +28,32 @@ fi
 
 # Lazy load Conda
 function conda() {
-  __conda_setup="$('/home/loc/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+  unfunction conda
+  __conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
   export CONDA_ENV="base"
   _setup_rpompt_env
 
   if [ $? -eq 0 ]; then
     eval "$__conda_setup"
   else
-    if [ -f "/home/loc/miniconda3/etc/profile.d/conda.sh" ]; then
-      . "/home/loc/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+      . "$HOME/miniconda3/etc/profile.d/conda.sh"
     else
-      export PATH="/home/loc/miniconda3/bin:$PATH"
+      export PATH="$HOME/miniconda3/bin:$PATH"
     fi
   fi
   unset __conda_setup
     if command -v conda &> /dev/null; then
       echo "Conda is already loaded."
     else
-      __conda_setup="$('/home/loc/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+      __conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
       if [ $? -eq 0 ]; then
         eval "$__conda_setup"
       else
-        if [ -f "/home/loc/miniconda3/etc/profile.d/conda.sh" ]; then
-          . "/home/loc/miniconda3/etc/profile.d/conda.sh"
+        if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+          . "$HOME/miniconda3/etc/profile.d/conda.sh"
         else
-          export PATH="/home/loc/miniconda3/bin:$PATH"
+          export PATH="$HOME/miniconda3/bin:$PATH"
         fi
       fi
       unset __conda_setup

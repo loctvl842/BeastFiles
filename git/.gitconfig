@@ -7,10 +7,10 @@
   user = loctvl842
 [credential "https://github.com"]
   helper = 
-  helper = !/usr/bin/gh auth git-credential
+  helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
   helper = 
-  helper = !/usr/bin/gh auth git-credential
+  helper = !/opt/homebrew/bin/gh auth git-credential
 [http]
 	postBuffer = 524288000
 [safe]
@@ -23,4 +23,4 @@
 	required = true
 	clean = git-lfs clean -- %f
 [credential]
-	helper = store
+  helper = !/opt/homebrew/bin/gh auth git-credential

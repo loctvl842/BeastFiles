@@ -15,7 +15,7 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 
 # plugins
-plug "zap-zsh/vim"
+export VI_MODE_ESC_INSERT="jk" && plug "zap-zsh/vim"
 plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "hlissner/zsh-autopair"
@@ -43,3 +43,6 @@ plug "$HOME/.config/zsh/tools/pnpm.zsh"
 plug "$HOME/.config/zsh/tools/pyenv.zsh"
 # plug "$HOME/.config/zsh/tools/flutter.zsh"
 plug "$HOME/.config/zsh/tools/bun.zsh"
+
+# bun completions
+[ -s "/Users/loctvl842/.bun/_bun" ] && source "/Users/loctvl842/.bun/_bun"
