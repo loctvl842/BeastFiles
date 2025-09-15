@@ -44,5 +44,4 @@ plug "$HOME/.config/zsh/tools/pyenv.zsh"
 # plug "$HOME/.config/zsh/tools/flutter.zsh"
 plug "$HOME/.config/zsh/tools/bun.zsh"
 
-# bun completions
-[ -s "/Users/loctvl842/.bun/_bun" ] && source "/Users/loctvl842/.bun/_bun"
+eval $(thefuck --alias)

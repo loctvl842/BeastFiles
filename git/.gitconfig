@@ -24,3 +24,5 @@
 	clean = git-lfs clean -- %f
 [credential]
   helper = !/opt/homebrew/bin/gh auth git-credential
+[core]
+	excludesfile = /Users/loctvl842/.gitignore
