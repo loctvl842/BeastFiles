@@ -1,52 +1,80 @@
-# <type>[(optional scope)]: <subject>
-# <BLANK LINE>
-# [optional body]
-# <BLANK LINE>
-# [optional footer(s)]
+# -----------------------------
+# 🔥 QUICK-START PLACEHOLDER
+# -----------------------------
+# Replace below with your real commit:
+# feat(auth): add token validation to login endpoint
+#
+# - validate JWT token before login
+# - return 401 if token is invalid
+#
+# Fixes ENG-123
 
-# type
-#    fix: :bug: A bug fix
-#    feat: :sparkles: A new feature
-#    docs: :memo: Documentation only changes
-#    style: :lipstick: Changes that do not affect the meaning of the code
-#    refactor: :wrench: A code change that neither fixes a bug nor adds a feature
-#    perf: :zap: A code change that improves performance
-#    test:  :white_check_mark: Adding missing or correcting existing tests
-#    build: :building_construction: Changes that affect the build system or external dependencies
-#    ci: :construction_worker: Changes to our CI configuration files and scripts
-#    chore: :pencil2: Other changes that don't modify source or test files
-#    revert: :rewind: Reverts a previous commit
 
-# optional scope
-#   init: :tada: Initialize commit
-#   security: :lock: Security to invite users to upgrade in case of vulnerabilities
-#   deps: :arrow_up:/:arrow_down: Dependencies upgrading or downgrading
-#   config:   Configuration changes
-#   i18n:     Internationalization and localization
-#   ...
+# -----------------------------
+# Conventional Commits Template
+# -----------------------------
+#
+# <type>(optional scope)!: <short summary>
+#
+#   Types:
+#     feat     - new feature
+#     fix      - bug fix
+#     docs     - documentation only
+#     style    - formatting, no code change
+#     refactor - code change w/o feature or fix
+#     perf     - performance improvement
+#     test     - adding/correcting tests
+#     build    - build system or dependencies
+#     ci       - CI configuration or scripts
+#     chore    - misc. changes (no src/test impact)
+#     revert   - revert previous commit
+#
+# Add "!" after type/scope to indicate BREAKING CHANGE.
+#   e.g. feat(auth)!: require token for login
+#
+# Summary (max 50 chars, imperative mood):
+#   ✗ Added feature to...
+#   ✓ add login validation
+#
+# <type>(scope): <short summary>
 
-# subject: Short summary
-#   - Do not end with a period
-#   - Not cased
-#   - Start writing in lowercase
-#   - 100 characters or less
-#   - Use the imperative mood
+# -----------------------------
+# BODY (optional)
+# -----------------------------
+# Explain *what* and *why* (not how)
+# Wrap at 72 characters.
+# Use bullet points if listing changes.
+#
+# Example:
+# - add new /login endpoint
+# - update schema validation
 
-# optional body: Explain why this change is being made.
-#   - Wrap it to about 100 characters or so
-#   - Can use multiple lines with "-" for bullet points
-#   - Explain what and why vs. how
-
-# optional footer(s): Provide links or keys to any relevant tickets
-#   - Wrap it to about 100 characters or so
-#   Linking a pull request to an issue using a keyword
-#     - close #ISSUE-NUMBER
-#     - fix #ISSUE-NUMBER
-#     - resolve #ISSUE-NUMBER
-
-# --------------------
-# Conventional Commits
-# A specification for adding human and machine-readable meaning to commit messages
-# Ref: https://www.conventionalcommits.org
-# --------------------
-
+# -----------------------------
+# FOOTERS (optional)
+# -----------------------------
+# 1️⃣ Breaking changes:
+# BREAKING CHANGE: describe what breaks and why
+#
+# 2️⃣ Link issues (Linear / GitHub / Jira):
+# Use magic words + issue ID (or full URL)
+#
+# --- Closing magic words (auto-move + close issue) ---
+# close, closes, closed, closing
+# fix, fixes, fixed, fixing
+# resolve, resolves, resolved, resolving
+# complete, completes, completed, completing
+#
+# Example:
+# Fixes ENG-123
+# Resolves https://linear.app/workspace/issue/ENG-123
+#
+# --- Non-closing magic words (just link, don't close) ---
+# ref, refs, references
+# part of, related to, contributes to
+# toward, towards
+#
+# Example:
+# related to ENG-101
+# refs https://linear.app/workspace/issue/ENG-222
+#
+# (Tip: include issue ID in your branch name and PR title too)
