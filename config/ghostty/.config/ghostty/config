@@ -32,8 +32,8 @@ keybind = ctrl+b>/=new_split:down
 keybind = ctrl+b>h=goto_split:left
 keybind = ctrl+b>j=goto_split:down
 keybind = ctrl+b>k=goto_split:up
-keybind = ctrl+b>z=toggle_split_zoom
 keybind = ctrl+b>l=goto_split:right
+keybind = ctrl+b>z=toggle_split_zoom
 keybind = shift+enter=text:\n
 
 keybind = ctrl+b>z=toggle_split_zoom
