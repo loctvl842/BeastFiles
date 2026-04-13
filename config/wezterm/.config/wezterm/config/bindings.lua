@@ -76,17 +76,18 @@ local keys = {
 		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
 	},
 
-	-- Navigate between tabs
-	{
-		key = "h",
-		mods = "ALT|SHIFT",
-		action = wezterm.action.ActivateTabRelative(-1),
-	},
-	{
-		key = "l",
-		mods = "ALT|SHIFT",
-		action = wezterm.action.ActivateTabRelative(1),
-	},
+	-- =========================
+	-- Tabs: Navigate (CMD + h / l)
+	-- =========================
+	{ key = "h", mods = "CMD", action = wezterm.action.ActivateTabRelative(-1) },
+	{ key = "l", mods = "CMD", action = wezterm.action.ActivateTabRelative(1) },
+
+	-- =========================
+	-- Tabs: Move / Reorder (CMD + SHIFT + h / l)
+	-- =========================
+	{ key = "h", mods = "CMD|SHIFT", action = wezterm.action.MoveTabRelative(-1) },
+	{ key = "l", mods = "CMD|SHIFT", action = wezterm.action.MoveTabRelative(1) },
+
 	{ key = "[", mods = "LEADER", action = wezterm.action.ActivateCopyMode },
 }
 

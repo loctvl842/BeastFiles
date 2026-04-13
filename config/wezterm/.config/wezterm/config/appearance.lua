@@ -11,12 +11,13 @@ return {
 
 	-- Window padding (matches Ghostty's window-padding-y = 0,0)
 	window_padding = {
-		left = 0,
-		right = 0,
+		left = 10,
+		right = 10,
 		top = 10,
 		bottom = 0,
 	},
 	window_decorations = "RESIZE",
+  native_macos_fullscreen_mode = true,
 
 	-- Tab bar font customization
 	window_frame = {
@@ -36,18 +37,20 @@ return {
 	switch_to_last_active_tab_when_closing_tab = true,
 
 	-- Performance
-	max_fps = 120,
-	animation_fps = 120,
+	max_fps = 60,
+	animation_fps = 60,
 	front_end = "WebGpu", ---@type 'WebGpu' | 'OpenGL' | 'Software'
+  webgpu_power_preference = "LowPower",
+
 
 	-- Smooth cursor animations
 	cursor_blink_ease_in = "EaseIn",
 	cursor_blink_ease_out = "EaseOut",
-	cursor_blink_rate = 700,
+	cursor_blink_rate = 0,
 
 	-- Inactive pane appearance
 	inactive_pane_hsb = {
 		saturation = 1.0,
-		brightness = 1.0,
+		brightness = 0.85,
 	},
 }
