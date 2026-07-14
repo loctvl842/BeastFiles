@@ -269,7 +269,7 @@ function command_not_found_handler {
 
   ##################################[ dir: current directory ]##################################
   # Current directory background color.
-  typeset -g POWERLEVEL9K_DIR_BACKGROUND=4
+  typeset -g POWERLEVEL9K_DIR_BACKGROUND=5
   # Default current directory foreground color.
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=8
   # Render the directory path in bold while preserving Powerlevel10k's

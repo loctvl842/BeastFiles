@@ -11,10 +11,10 @@ return {
 
 	-- Window padding (matches Ghostty's window-padding-y = 0,0)
 	window_padding = {
-		left = 10,
-		right = 10,
-		top = 10,
-		bottom = 0,
+		left = 5,
+		right = 5,
+		top = 5,
+		bottom = 5,
 	},
 	window_decorations = "RESIZE",
   native_macos_fullscreen_mode = true,
