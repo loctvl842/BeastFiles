@@ -1,6 +1,6 @@
 #!/bin/sh
 export EDITOR="nvim"
-export TERMINAL="kitty"
+export TERMINAL="wezterm"
 export BROWSER="open -a 'Brave Browser'"
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999

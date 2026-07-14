@@ -2,7 +2,7 @@ local Config = require("config")
 
 -- Global theme configuration
 -- Options: "pro", "spectrum", "classic", "machine", "ristretto", "octagon", "light"
-THEME = "pro"
+THEME = "neovim-default"
 
 -- Global tab bar mode configuration
 -- true = native fancy tabs with borders, false = custom styled tabs with circles

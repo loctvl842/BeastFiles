@@ -45,3 +45,7 @@ plug "$HOME/.config/zsh/tools/pyenv.zsh"
 plug "$HOME/.config/zsh/tools/bun.zsh"
 
 eval $(thefuck --alias)
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/loctvl842/.lmstudio/bin"
+# End of LM Studio CLI section
