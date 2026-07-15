@@ -2,7 +2,7 @@ local Config = require("config")
 
 -- Global theme configuration
 -- Options: "pro", "spectrum", "classic", "machine", "ristretto", "octagon", "light"
-THEME = "neovim-default"
+THEME = "monokai-pro"
 
 -- Global tab bar mode configuration
 -- true = native fancy tabs with borders, false = custom styled tabs with circles

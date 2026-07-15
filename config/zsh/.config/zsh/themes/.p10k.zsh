@@ -413,12 +413,23 @@ function command_not_found_handler {
   # typeset -g POWERLEVEL9K_DIR_PREFIX='in '
 
   #####################################[ vcs: git status ]######################################
+  # VCS segment colors read directly from WEZTERM_PALETTE_* / WEZTERM_VCS_* env vars
+  # exported by WezTerm's appearance.lua. No per-theme case logic needed here:
+  # palettes that deviate from the monokai convention define vcs_* fields in their
+  # palette file; all others fall back to accent4/accent3/accent1 automatically.
+  # The monokai-pro hex values are compile-time defaults if WezTerm isn't running.
+  typeset -g _p10k_vcs_fg=${WEZTERM_PALETTE_BG:-#2d2a2e}
+  typeset -g _p10k_vcs_clean_bg=${WEZTERM_VCS_CLEAN:-#a9dc76}
+  typeset -g _p10k_vcs_modified_bg=${WEZTERM_VCS_MODIFIED:-#ffd866}
+  typeset -g _p10k_vcs_conflicted_bg=${WEZTERM_VCS_CONFLICT:-#ff6188}
+  typeset -g _p10k_vcs_loading_bg=${WEZTERM_PALETTE_DARK1:-#221f22}
+
   # Version control background colors.
-  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=2
-  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=3
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=2
-  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=3
-  typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=8
+  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=$_p10k_vcs_clean_bg
+  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=$_p10k_vcs_modified_bg
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=$_p10k_vcs_clean_bg
+  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=$_p10k_vcs_conflicted_bg
+  typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=$_p10k_vcs_loading_bg
 
   # Branch icon. Set this parameter to '\UE0A0 ' for the popular Powerline branch icon.
   typeset -g POWERLEVEL9K_VCS_BRANCH_ICON='\uF126 '
@@ -446,11 +457,13 @@ function command_not_found_handler {
     fi
 
     # Styling for different parts of Git status.
-    local       meta='%7F' # white foreground
-    local      clean='%0F' # black foreground
-    local   modified='%0F' # black foreground
-    local  untracked='%0F' # black foreground
-    local conflicted='%1F' # red foreground
+    # Uses $_p10k_vcs_fg (set above from the active palette) so text is always
+    # readable against the colored segment background regardless of theme.
+    local       meta="%F{$_p10k_vcs_fg}"
+    local      clean="%F{$_p10k_vcs_fg}"
+    local   modified="%F{$_p10k_vcs_fg}"
+    local  untracked="%F{$_p10k_vcs_fg}"
+    local conflicted="%F{$_p10k_vcs_fg}"
 
     local res
 

@@ -18,6 +18,7 @@ SAVEHIST=1000000
 export VI_MODE_ESC_INSERT="jk" && plug "zap-zsh/vim"
 plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-syntax-highlighting"
+plug "$HOME/.config/zsh/themes/highlight.zsh"
 plug "hlissner/zsh-autopair"
 plug "zap-zsh/supercharge"
 plug "conda-incubator/conda-zsh-completion"

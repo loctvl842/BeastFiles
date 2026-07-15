@@ -13,7 +13,7 @@ local ICON_FOLDER = nf.md_folder --[[ 󰉋 ]]
 
 ---@type table<string, Cells.SegmentColors>
 local colors = {
-	cwd = { fg = palette.accent3, bg = "#333333" },
+	cwd = { fg = palette.accent3 },
 }
 
 local cells = Cells:new()
