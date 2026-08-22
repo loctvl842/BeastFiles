@@ -50,3 +50,6 @@ eval $(thefuck --alias)
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/loctvl842/.lmstudio/bin"
 # End of LM Studio CLI section
+
+# kimi-code
+export PATH="/Users/loctvl842/.kimi-code/bin:$PATH"
