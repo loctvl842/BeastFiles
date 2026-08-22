@@ -3,8 +3,8 @@
 # Detect operating system
 if [[ "$(uname)" == "Darwin" ]]; then
   OS="macos"
-elif [[ -f "/etc/arch-release" ]]; then
-  OS="arch"
+elif [[ "$(uname)" == "Linux" ]]; then
+  OS="linux"
 else
   echo "Unsupported operating system. This script is designed for Arch Linux and macOS."
   exit 1
@@ -28,7 +28,7 @@ set_linux_keyboard() {
       echo "wmctrl not found, skipping window manager check"
     fi
   else
-    echo "X display not detected, skipping X11 keyboard settings"
+    # echo "X display not detected, skipping X11 keyboard settings"
   fi
 }
 
@@ -43,6 +43,6 @@ set_macos_keyboard() {
 # Apply settings based on detected OS
 if [[ "$OS" == "macos" ]]; then
   set_macos_keyboard
-elif [[ "$OS" == "arch" ]]; then
+elif [[ "$OS" == "linux" ]]; then
   set_linux_keyboard
 fi
