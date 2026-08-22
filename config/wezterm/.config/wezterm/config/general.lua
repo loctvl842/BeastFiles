@@ -8,5 +8,5 @@ return {
 	pane_focus_follows_mouse = false,
 
 	-- Leader key configuration (like tmux)
-	leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 },
+	leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 },
 }

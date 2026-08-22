@@ -70,7 +70,7 @@ return {
 
 	-- Tab bar (set USE_FANCY_TAB_BAR in wezterm.lua)
 	enable_tab_bar = true,
-	hide_tab_bar_if_only_one_tab = false,
+	hide_tab_bar_if_only_one_tab = true,
 	use_fancy_tab_bar = USE_FANCY_TAB_BAR,
 	tab_max_width = 30,
 	show_tab_index_in_tab_bar = false,

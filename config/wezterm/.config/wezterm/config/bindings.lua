@@ -77,18 +77,25 @@ local keys = {
 	},
 
 	-- =========================
-	-- Tabs: Navigate (CMD + h / l)
+	-- Tabs: Navigate (CMD + Left / Right)
+	-- Kept off CMD+h/l entirely so that combo is free for tmux's window
+	-- navigation on the remote host.
 	-- =========================
-	{ key = "h", mods = "CMD", action = wezterm.action.ActivateTabRelative(-1) },
-	{ key = "l", mods = "CMD", action = wezterm.action.ActivateTabRelative(1) },
+	{ key = "LeftArrow", mods = "ALT", action = wezterm.action.ActivateTabRelative(-1) },
+	{ key = "RightArrow", mods = "ALT", action = wezterm.action.ActivateTabRelative(1) },
 
 	-- =========================
 	-- Tabs: Move / Reorder (CMD + SHIFT + h / l)
 	-- =========================
-	{ key = "h", mods = "CMD|SHIFT", action = wezterm.action.MoveTabRelative(-1) },
-	{ key = "l", mods = "CMD|SHIFT", action = wezterm.action.MoveTabRelative(1) },
+	{ key = "LeftArrow", mods = "ALT|SHIFT", action = wezterm.action.MoveTabRelative(-1) },
+	{ key = "RightArrow", mods = "ALT|SHIFT", action = wezterm.action.MoveTabRelative(1) },
 
 	{ key = "[", mods = "LEADER", action = wezterm.action.ActivateCopyMode },
+
+	-- Disable WezTerm's built-in Ctrl+Tab / Ctrl+Shift+Tab tab-switching so
+	-- these keys pass through SSH to tmux's own C-Tab / C-S-Tab bindings.
+	{ key = "Tab", mods = "CTRL", action = wezterm.action.DisableDefaultAssignment },
+	{ key = "Tab", mods = "CTRL|SHIFT", action = wezterm.action.DisableDefaultAssignment },
 }
 
 local key_tables = {
