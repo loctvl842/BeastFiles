@@ -16,12 +16,20 @@
 alias c='clear'
 
 # Enhanced 'ls' using 'eza' for better visuals with icons
-alias l='eza -h --icons=auto'                        # Long list with human-readable sizes
-alias ls='eza --icons=auto'                           # Short list with icons
-alias la='eza -a --icons=auto'                        # All files, including hidden
-alias ll='eza -ha --icons=auto --sort=name --group-directories-first' # Detailed list, sorted
-alias ld='eza -hD --icons=auto'                       # List directories with human-readable sizes
-alias lt='eza --icons=auto --tree'                    # Display directory tree
+alias l='eza -h --icons=auto'                                           # Long list with human-readable sizes
+alias ls='eza --icons=auto'                                             # Short list with icons
+alias la='eza -a --icons=auto'                                          # All files, including hidden
+alias ll='eza -lh --icons=auto --sort=name --group-directories-first'   # Detailed list, sorted
+alias ld='eza -hD --icons=auto'                                         # List directories with human-readable sizes
+alias lt='eza --icons=auto --tree'                                      # Display directory tree
+
+alias tl='tmux ls'
+alias tn='tmux new -s'
+alias ta='tmux a -t'
+alias td='tmux detach'
+alias tks='tmux kill-session -t'  # Kills a specific named session
+alias tka='tmux kill-session -a'  # Kills all active sessions except the current one
+alias tkv='tmux kill-server'
 
 # Always create parent directories as needed
 alias mkdir='mkdir -p'
