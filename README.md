@@ -43,6 +43,19 @@ In order to install all packages
 stow -t ~ *
 ```
 
+## 🤖 Claude Code
+
+The `claude` package manages `~/.claude/{settings.json,statusline.sh,notify.mp3}`. Always stow it with `--no-folding`, otherwise `~/.claude` (sessions, caches, plugins) would become a symlink into this repo
+
+```bash
+cd BeastFiles/config
+stow -t ~ --no-folding claude
+```
+
+- `~/.claude/CLAUDE.md` links to `~/AGENTS.md` and is not part of this package
+- `.claude` is ignored by the global `~/.gitignore`, so the repo `.gitignore` re-includes `config/claude/.claude`
+- If Claude Code rewrites `settings.json` and replaces the symlink with a plain file, copy it back into `config/claude/.claude/` and re-stow
+
 ## 🤟Fonts
 
 **Emoji**

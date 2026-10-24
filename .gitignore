@@ -1,2 +1,3 @@
 fonts/
 .DS_Store
+!/config/claude/.claude

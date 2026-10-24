@@ -1,0 +1,50 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(~/.zshrc)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)"
+    ]
+  },
+  "model": "sonnet",
+  "hooks": {
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ \"$(uname)\" = \"Darwin\" ] && [ -f \"$HOME/.claude/notify.mp3\" ] && afplay \"$HOME/.claude/notify.mp3\" 2>/dev/null || true",
+            "async": true
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "sh ~/.claude/statusline.sh",
+    "hideVimModeIndicator": true
+  },
+  "enabledPlugins": {
+    "lua-lsp@claude-plugins-official": true
+  },
+  "effortLevel": "high",
+  "modelSettings": {
+    "qwen2.5-coder:7b": {
+      "effortLevel": "low"
+    },
+    "claude-sonnet-5-5": {
+      "effortLevel": "medium"
+    }
+  },
+  "awaySummaryEnabled": false,
+  "tui": "fullscreen",
+  "voiceEnabled": false,
+  "editorMode": "vim",
+  "vimInsertModeRemaps": {
+    "jk": "<Esc>"
+  }
+}
